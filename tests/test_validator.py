@@ -9,8 +9,8 @@ import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-SCRIPT = ROOT / 'skills/behavior-rebuild/scripts/validate.py'
-REPORT = ROOT / 'skills/behavior-rebuild/scripts/report.py'
+SCRIPT = ROOT / 'skills/the-maid-rebuild/scripts/validate.py'
+REPORT = ROOT / 'skills/the-maid-rebuild/scripts/report.py'
 DEMO = ROOT / 'examples/delimited-notebook/run_demo.py'
 
 
@@ -50,7 +50,7 @@ class GateTests(unittest.TestCase):
 
     def test_relocated_skill_install(self):
         installed = Path(self.temp.name) / 'portable skill'
-        shutil.copytree(ROOT / 'skills/behavior-rebuild', installed, ignore=shutil.ignore_patterns('__pycache__'))
+        shutil.copytree(ROOT / 'skills/the-maid-rebuild', installed, ignore=shutil.ignore_patterns('__pycache__'))
         command = [sys.executable, str(installed / 'scripts/validate.py'), str(self.root),
                    '--stage', 'acceptance', '--run', 'runs/demo.json', '--candidate', 'demo-v1', '--json']
         result = subprocess.run(command, cwd=self.temp.name, capture_output=True, text=True)
@@ -60,7 +60,7 @@ class GateTests(unittest.TestCase):
     def test_empty_template_blocks(self):
         shutil.rmtree(self.root)
         self.root.mkdir()
-        shutil.copyfile(ROOT / 'skills/behavior-rebuild/assets/templates/project.json', self.root / 'project.json')
+        shutil.copyfile(ROOT / 'skills/the-maid-rebuild/assets/templates/project.json', self.root / 'project.json')
         code, payload = self.invoke('discover', explicit=False)
         self.assertEqual(code, 1)
         self.assertIn('EMPTY_SCOPE', [e['code'] for e in payload['errors']])

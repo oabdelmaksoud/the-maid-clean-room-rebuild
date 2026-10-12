@@ -41,7 +41,7 @@ def run(args):
     output.parent.mkdir(parents=True, exist_ok=True)
     output.mkdir()  # Refuse to overwrite previous evidence.
     fixture = HERE / 'fixture'
-    script = Path(args.maid_script).resolve() if args.maid_script else HERE.parents[1] / 'skills/behavior-rebuild/scripts/fidelity.py'
+    script = Path(args.maid_script).resolve() if args.maid_script else HERE.parents[1] / 'skills/the-maid-rebuild/scripts/fidelity.py'
     identities = json.loads((HERE / 'fixture-identities.json').read_text(encoding='utf-8'))
     candidate_checked = False
     if args.candidate_html:

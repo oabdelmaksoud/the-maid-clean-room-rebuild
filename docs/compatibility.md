@@ -1,6 +1,6 @@
 # Compatibility and verification scope
 
-The canonical distribution is the complete `skills/behavior-rebuild/` directory. It contains Markdown instructions, references, JSON/Markdown templates, and Python scripts. Root examples and documentation are optional repository resources. No plugin manifest, hooks, or MCP server is required.
+The canonical distribution is the complete `skills/the-maid-rebuild/` directory. It contains Markdown instructions, references, JSON/Markdown templates, and Python scripts. Root examples and documentation are optional repository resources. No plugin manifest, hooks, or MCP server is required.
 
 ## Observed coverage
 

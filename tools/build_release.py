@@ -56,7 +56,7 @@ def build(root, output):
     version = (root / 'VERSION').read_text(encoding='utf-8').strip()
     if len(version) > 32 or not re.fullmatch(r'(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)', version):
         raise ValueError('VERSION must be a stable semantic version: MAJOR.MINOR.PATCH without leading zeroes')
-    skill_prefix = 'skills/behavior-rebuild/'
+    skill_prefix = 'skills/the-maid-rebuild/'
     skill_entries = [p for p in entries if p.startswith(skill_prefix)]
     if not skill_entries:
         raise ValueError('no portable skill files selected')

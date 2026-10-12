@@ -1,13 +1,13 @@
 <div align="center">
 
-# 🧹 The Maid - Clean Room Rebuild
+# 🧹 The Maid - ReBuild
 
 **Observe the behavior. Write an original implementation. Bring the proof.**
 
 A practical agent skill for turning permitted research into a reviewed contract,
 a fresh implementation, and reproducible acceptance evidence.
 
-<img alt="Python 3.11 or later" src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=flat-square"> <img alt="MIT license" src="https://img.shields.io/badge/License-MIT-507D64?style=flat-square"> <img alt="Version 0.3.0" src="https://img.shields.io/badge/Version-0.3.0-725AC1?style=flat-square">
+<img alt="Python 3.11 or later" src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=flat-square"> <img alt="MIT license" src="https://img.shields.io/badge/License-MIT-507D64?style=flat-square"> <img alt="Version 0.3.1" src="https://img.shields.io/badge/Version-0.3.1-725AC1?style=flat-square">
 
 [The method](#the-method) · [Quick start](#quick-start) · [Try it](#try-it) · [Evidence](#evidence-so-far) · [Reference](#reference)
 
@@ -19,7 +19,7 @@ Good rebuilds start with the user's exact request and a clear account of what a 
 
 Bring your own product, stack, and authorized access. The kit supplies the method, reusable records, and local checks. Its core Python tools use only the standard library and run offline; validators and reporters read records without changing them.
 
-> **New name, stable skill.** The Maid is the project brand. Install and invoke **`$behavior-rebuild`** as before. Skill paths, CLI commands, and the `behavior-rebuild-kit` / `behavior-rebuild-skill` archive names remain stable.
+> **New command and display name.** Install and invoke **`$the-maid-rebuild`**, displayed as **The Maid - ReBuild**. It replaces `$behavior-rebuild`; the old command is not an alias. Archive filename prefixes `behavior-rebuild-kit` / `behavior-rebuild-skill` remain stable, while the standalone archive now contains `the-maid-rebuild/`.
 
 ## The method
 
@@ -54,35 +54,44 @@ cd the-maid-clean-room-rebuild
 Copy the **complete skill folder** from the repository root. This standard-library command uses your configured `CODEX_HOME`, or defaults to `~/.codex`. It refuses to overwrite an existing installation and leaves the source folder unchanged.
 
 ```sh
-python3 -c "import os, shutil; from pathlib import Path; source = Path('skills/behavior-rebuild'); destination = Path(os.environ.get('CODEX_HOME') or Path.home() / '.codex') / 'skills' / 'behavior-rebuild'; shutil.copytree(source, destination, ignore=shutil.ignore_patterns('__pycache__', '*.pyc')); print(destination)"
+python3 -c "import os, shutil; from pathlib import Path; source = Path('skills/the-maid-rebuild'); destination = Path(os.environ.get('CODEX_HOME') or Path.home() / '.codex') / 'skills' / 'the-maid-rebuild'; shutil.copytree(source, destination, ignore=shutil.ignore_patterns('__pycache__', '*.pyc')); print(destination)"
 ```
 
 On macOS, Linux, or Windows, use `python` instead if that is the name of your Python 3.11+ executable. Review an existing installation before replacing it. No plugin wrapper or package dependency is needed.
 
+If upgrading from `$behavior-rebuild`, first use the installation command above to copy the new folder. Review the old installation, then move it outside the active skills directory to avoid duplicate commands. This migration command preserves it as a backup and refuses an existing backup path:
+
+```sh
+python3 -c "import os, shutil; from pathlib import Path; base = Path(os.environ.get('CODEX_HOME') or Path.home() / '.codex'); old = base / 'skills' / 'behavior-rebuild'; new = base / 'skills' / 'the-maid-rebuild'; backup = base / 'skill-backups' / 'behavior-rebuild-0.3.0'; assert new.is_dir(), 'Install the new skill first'; assert old.is_dir(), 'Old installation not found'; assert not backup.exists(), 'Review the existing backup first'; backup.parent.mkdir(parents=True, exist_ok=True); old.rename(backup); print(backup)"
+```
+
+Start a fresh Codex turn after installation or migration so skill discovery loads the new identifier. No installed skills are changed by cloning, testing or building this repository.
+
+
 Start a new Codex turn, then choose a mode:
 
 ```text
-$behavior-rebuild Discover the permitted behavior of this workflow. Record evidence, exclusions, and unknowns.
+$the-maid-rebuild Discover the permitted behavior of this workflow. Record evidence, exclusions, and unknowns.
 ```
 
 ```text
-$behavior-rebuild Prepare a handoff from this approved evidence. Freeze the packet and arrange separate review.
+$the-maid-rebuild Prepare a handoff from this approved evidence. Freeze the packet and arrange separate review.
 ```
 
 ```text
-$behavior-rebuild Verify/recover this implementation against its frozen contract. Report failures and rank repair work.
+$the-maid-rebuild Verify/recover this implementation against its frozen contract. Report failures and rank repair work.
 ```
 
-The [skill instructions](skills/behavior-rebuild/SKILL.md) describe the full workflow. The [compatibility record](docs/compatibility.md) states observed host coverage.
+The [skill instructions](skills/the-maid-rebuild/SKILL.md) describe the full workflow. The [compatibility record](docs/compatibility.md) states observed host coverage.
 
 ## Try it
 
 **Delimited Notebook** is an original fictional CSV workflow with synthetic inputs. Start by inspecting its static records:
 
 ```sh
-python3 skills/behavior-rebuild/scripts/validate.py examples/delimited-notebook --stage discover
-python3 skills/behavior-rebuild/scripts/validate.py examples/delimited-notebook --stage handoff
-python3 skills/behavior-rebuild/scripts/report.py examples/delimited-notebook
+python3 skills/the-maid-rebuild/scripts/validate.py examples/delimited-notebook --stage discover
+python3 skills/the-maid-rebuild/scripts/validate.py examples/delimited-notebook --stage handoff
+python3 skills/the-maid-rebuild/scripts/report.py examples/delimited-notebook
 ```
 
 Those records have no executed acceptance run. A discovery or handoff pass is not product acceptance.
@@ -91,8 +100,8 @@ To generate fresh demonstration evidence, choose a **new output directory**:
 
 ```sh
 python3 examples/delimited-notebook/run_demo.py --output ../behavior-rebuild-demo
-python3 skills/behavior-rebuild/scripts/validate.py ../behavior-rebuild-demo --stage acceptance --run runs/demo.json --candidate demo-v1
-python3 skills/behavior-rebuild/scripts/report.py ../behavior-rebuild-demo --run runs/demo.json --candidate demo-v1
+python3 skills/the-maid-rebuild/scripts/validate.py ../behavior-rebuild-demo --stage acceptance --run runs/demo.json --candidate demo-v1
+python3 skills/the-maid-rebuild/scripts/report.py ../behavior-rebuild-demo --run runs/demo.json --candidate demo-v1
 ```
 
 The runner writes only its new output directory. The example checks its declared total/export and invalid-amount behavior; crash recovery, cancellation, and receipt/idempotency guarantees remain extension work. Its recorded reviewer represents automated fixture checks. Read the [example guide](examples/delimited-notebook/README.md) for the exact oracle scope.
@@ -109,10 +118,10 @@ The Maid now checks two UI evidence types alongside output assertions:
 These are separate gates: a correct-looking button can still fail after a click or reload. A baseline from an approved original design supports candidate regression, not fidelity to the target. Faithful rebuilds require paired target/candidate evidence, actual native execution where requested, and real file exchange when compatibility is required. Every automated pass claim is recomputed from the recorded output. Browser capture is separate from the offline validator; the optional browser example uses Playwright and Pillow.
 
 ```text
-$behavior-rebuild Verify/recover this UI using visual and user-journey validation. Freeze the permitted baselines, capture conditions, and ordered state assertions before execution. Compare the current checks with the added checks using deliberate visual and persistence faults, preserve failures, and independently rerun repairs. Keep REA optional.
+$the-maid-rebuild Verify/recover this UI using visual and user-journey validation. Freeze the permitted baselines, capture conditions, and ordered state assertions before execution. Compare the current checks with the added checks using deliberate visual and persistence faults, preserve failures, and independently rerun repairs. Keep REA optional.
 ```
 
-Start with the [UI validation template](skills/behavior-rebuild/assets/templates/ui-validation.md) and [capture guide](skills/behavior-rebuild/references/visual-and-journey.md). The [Pocket Tasks project](examples/pocket-tasks/README.md) demonstrates the baseline-versus-expanded comparison in a real browser.
+Start with the [UI validation template](skills/the-maid-rebuild/assets/templates/ui-validation.md) and [capture guide](skills/the-maid-rebuild/references/visual-and-journey.md). The [Pocket Tasks project](examples/pocket-tasks/README.md) demonstrates the baseline-versus-expanded comparison in a real browser.
 
 To reproduce the browser comparison, follow the example's [optional dependency setup](examples/pocket-tasks/README.md#run-it), then run from this repository root with a **new output directory**:
 
@@ -128,10 +137,10 @@ The macOS/Linux example paths above assume the documented setup: a separate Pyth
 
 ## Fidelity beyond a passing subset
 
-The [fidelity guide](skills/behavior-rebuild/references/fidelity.md) keeps the original request, complete surface/feature inventory and reviewed objective linked to an explicit candidate. Use the [fidelity contract](skills/behavior-rebuild/assets/templates/fidelity-contract.json) and [evaluation record](skills/behavior-rebuild/assets/templates/fidelity.json) alongside existing project records:
+The [fidelity guide](skills/the-maid-rebuild/references/fidelity.md) keeps the original request, complete surface/feature inventory and reviewed objective linked to an explicit candidate. Use the [fidelity contract](skills/the-maid-rebuild/assets/templates/fidelity-contract.json) and [evaluation record](skills/the-maid-rebuild/assets/templates/fidelity.json) alongside existing project records:
 
 ```sh
-python3 skills/behavior-rebuild/scripts/fidelity.py PROJECT_DIR --json
+python3 skills/the-maid-rebuild/scripts/fidelity.py PROJECT_DIR --json
 ```
 
 The local gate checks hashes, case bindings and recorded outcomes. It does not observe the product or authenticate the records. Report matched, mismatched, unknown and user-authorized deviations per dimension, retaining every inventoried feature in denominators. Existing bounded projects remain supported and their results stay bounded.
@@ -161,14 +170,14 @@ These are finite checks of declared scope. They do not establish full product pa
 
 ## Reference
 
-Start a real project with the [templates](skills/behavior-rebuild/assets/templates). The starter `project.json` is deliberately **blocked** until it contains meaningful scope and evidence. Keep restricted raw research outside the distributable packet.
+Start a real project with the [templates](skills/the-maid-rebuild/assets/templates). The starter `project.json` is deliberately **blocked** until it contains meaningful scope and evidence. Keep restricted raw research outside the distributable packet.
 
 | Read this | For this |
 |---|---|
 | [Method](docs/method.md) | Research, handoff, implementation, and review boundaries. |
-| [Fidelity](skills/behavior-rebuild/references/fidelity.md) | Original request, inventory, paired runtime evidence and dimensional coverage. |
-| [Record format](skills/behavior-rebuild/references/record-format.md) | Exact fields in the bespoke versioned JSON records. |
-| [Visual and journey validation](skills/behavior-rebuild/references/visual-and-journey.md) | Frozen visual baselines, ordered state assertions, capture conditions, and limitations. |
+| [Fidelity](skills/the-maid-rebuild/references/fidelity.md) | Original request, inventory, paired runtime evidence and dimensional coverage. |
+| [Record format](skills/the-maid-rebuild/references/record-format.md) | Exact fields in the bespoke versioned JSON records. |
+| [Visual and journey validation](skills/the-maid-rebuild/references/visual-and-journey.md) | Frozen visual baselines, ordered state assertions, capture conditions, and limitations. |
 | [Quality gates](docs/quality-gates.md) | What each check can support. |
 | [Evidence boundary](docs/evidence-boundary.md) | Limits of hashes, declarations, and recorded outcomes. |
 | [Publication checklist](docs/publication-checklist.md) | Conditions to check before distribution. |
@@ -210,8 +219,8 @@ python3 tools/build_release.py --output ../behavior-rebuild-release
 
 The builder checks the tree against `release-files.txt`, then creates:
 
-- `behavior-rebuild-kit-0.3.0.zip` — repository resources.
-- `behavior-rebuild-skill-0.3.0.zip` — the self-contained `behavior-rebuild/` folder.
+- `behavior-rebuild-kit-0.3.1.zip` — repository resources.
+- `behavior-rebuild-skill-0.3.1.zip` — the self-contained `the-maid-rebuild/` folder.
 - `SHA256SUMS` — archive byte identities.
 
 Choose a different destination if it already exists. Adding or removing a release file requires updating the inventory. Archives, hashes, and local preparation do not publish anything or constitute publication approval.

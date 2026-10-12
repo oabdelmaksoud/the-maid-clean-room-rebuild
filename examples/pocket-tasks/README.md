@@ -23,13 +23,13 @@ Use a new output directory for every run. `--node PATH` selects a Node executabl
 The runner exits nonzero if actual detections differ from the controlled expectation or any portable acceptance gate disagrees. It saves all failed results as evidence. To inspect individual gates:
 
 ```sh
-python3 skills/behavior-rebuild/scripts/validate.py /tmp/maid-pocket-trial/baseline \
+python3 skills/the-maid-rebuild/scripts/validate.py /tmp/maid-pocket-trial/baseline \
   --stage acceptance --run runs/buggy.json --candidate pocket-buggy
 # Expected exit 0: the old narrow add-task check misses all three faults.
-python3 skills/behavior-rebuild/scripts/validate.py /tmp/maid-pocket-trial/enhanced \
+python3 skills/the-maid-rebuild/scripts/validate.py /tmp/maid-pocket-trial/enhanced \
   --stage acceptance --run runs/buggy.json --candidate pocket-buggy
 # Expected exit 1: blank feedback, persistence and mobile layout fail.
-python3 skills/behavior-rebuild/scripts/validate.py /tmp/maid-pocket-trial/enhanced \
+python3 skills/the-maid-rebuild/scripts/validate.py /tmp/maid-pocket-trial/enhanced \
   --stage acceptance --run runs/fixed.json --candidate pocket-fixed
 # Expected exit 0: all five cases pass.
 ```

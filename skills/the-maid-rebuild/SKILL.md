@@ -1,9 +1,9 @@
 ---
-name: behavior-rebuild
+name: the-maid-rebuild
 description: Discover permitted product behavior, preserve requested fidelity, prepare an independent implementation handoff, and evaluate paired target/candidate evidence and recovery gaps.
 ---
 
-# The Maid - Clean Room Rebuild
+# The Maid - ReBuild
 
 Produce a traceable route from permitted evidence to an independently authored implementation contract and reproducible acceptance cases, including visual and user-journey evidence where relevant. Preserve the user's product scope and source restrictions. This method does not certify legal clearance, independence, or product parity.
 

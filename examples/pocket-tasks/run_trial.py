@@ -72,7 +72,7 @@ def main():
         shutil.copyfile(SOURCE / name, snapshot / name)
     (snapshot / 'validation').mkdir()
     for name in ('core.py', 'ui_checks.py', 'validate.py'):
-        shutil.copyfile(SOURCE.parents[1] / 'skills/behavior-rebuild/scripts' / name, snapshot / 'validation' / name)
+        shutil.copyfile(SOURCE.parents[1] / 'skills/the-maid-rebuild/scripts' / name, snapshot / 'validation' / name)
     frozen_sources = {str(path.relative_to(snapshot)): hashlib.sha256(path.read_bytes()).hexdigest() for path in snapshot.rglob('*') if path.is_file()}
     write(output / 'source-hashes.json', frozen_sources)
     handler = functools.partial(QuietHandler, directory=str(snapshot))

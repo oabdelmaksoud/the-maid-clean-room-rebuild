@@ -43,7 +43,7 @@ Copy `assets/templates/fidelity-contract.json` and `fidelity.json` into the proj
 Each evaluated feature records its status, candidate ID/evidence, case IDs, baseline origin (`target`, `original_design` or `not_applicable`) and deviation. A deviation is null or `{"instruction":"exact user decision","evidence":{"path":"evidence/decision.txt","sha256":"..."}}`; the instruction must occur in the hashed text. A faithful objective requires the requested target/candidate runtime and platform to agree. Explicit redesign/bounded objectives may use the runtime permitted by their request.
 
 ```sh
-python3 skills/behavior-rebuild/scripts/fidelity.py PROJECT_DIR --json
+python3 skills/the-maid-rebuild/scripts/fidelity.py PROJECT_DIR --json
 ```
 
 The CLI reads the explicit `fidelity-contract.json` and `fidelity.json` in that project directory without requiring `project.json`. Exit `0` means the recorded fidelity gate passed, `1` means well-formed evidence is blocked or fails, and `2` means invalid records or integrity/invocation errors. These remain local record checks; they do not observe the target, launch the candidate, prove authenticity or grant publication permission.

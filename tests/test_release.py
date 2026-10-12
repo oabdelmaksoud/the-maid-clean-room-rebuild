@@ -15,10 +15,10 @@ class ReleaseTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name) / 'repo'
-        (self.root / 'skills/behavior-rebuild').mkdir(parents=True)
+        (self.root / 'skills/the-maid-rebuild').mkdir(parents=True)
         (self.root / 'VERSION').write_text('0.2.0\n')
-        (self.root / 'skills/behavior-rebuild/SKILL.md').write_text('Original test fixture\n')
-        self.entries = ['VERSION', 'release-files.txt', 'skills/behavior-rebuild/SKILL.md']
+        (self.root / 'skills/the-maid-rebuild/SKILL.md').write_text('Original test fixture\n')
+        self.entries = ['VERSION', 'release-files.txt', 'skills/the-maid-rebuild/SKILL.md']
         (self.root / 'release-files.txt').write_text('\n'.join(self.entries) + '\n')
 
     def test_exact_archives_and_reproducibility(self):
@@ -33,7 +33,7 @@ class ReleaseTests(unittest.TestCase):
             for info in archive.infolist():
                 self.assertEqual(info.date_time, (1980, 1, 1, 0, 0, 0))
         with zipfile.ZipFile(one / names[1]) as archive:
-            self.assertEqual(archive.namelist(), ['behavior-rebuild/SKILL.md'])
+            self.assertEqual(archive.namelist(), ['the-maid-rebuild/SKILL.md'])
 
     def test_reject_unsafe_or_malformed_version(self):
         for version in ['../0.2.0', '/0.2.0', '0.2.0/other', '01.2.0', '0.2', 'v0.2.0', '0.2.0\nextra', '0.2.0-beta', '9' * 33 + '.0.0']:
@@ -62,7 +62,7 @@ class ReleaseTests(unittest.TestCase):
                 release.build(self.root, path)
 
     def test_reject_symlink_or_nonfile(self):
-        path = self.root / 'skills/behavior-rebuild/SKILL.md'
+        path = self.root / 'skills/the-maid-rebuild/SKILL.md'
         path.unlink()
         try:
             path.symlink_to(self.root / 'VERSION')

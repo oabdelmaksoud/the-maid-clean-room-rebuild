@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.1 — Skill invocation rename
+
+- Rename the canonical skill folder and invocation from `behavior-rebuild` / `$behavior-rebuild` to `the-maid-rebuild` / `$the-maid-rebuild`; the old command is replaced, not retained as an alias.
+- Display the skill as **The Maid - ReBuild** with explicit interface metadata. Keep default implicit invocation unchanged.
+- Update live installation/migration instructions, CLI paths, tests, CI and release inventory. Keep legacy archive filename prefixes stable; the standalone archive contains `the-maid-rebuild/`.
+- Preserve historical attribution, verification records and hashed fixtures. This rename adds no new product-fidelity claims.
+
 ## 0.2.0 — Unreleased
 
 - Add bounded `visual_pixels` and ordered, typed `journey_trace` oracles to version 1 records; existing records remain compatible with the updated validator.

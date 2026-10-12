@@ -32,7 +32,7 @@ class UIOracleTests(unittest.TestCase):
         (self.root / 'project.json').write_bytes(manifest)
         self.run['manifest_sha256'] = hashlib.sha256(manifest).hexdigest()
         (self.root / 'runs/demo.json').write_text(json.dumps(self.run))
-        result = subprocess.run([sys.executable, str(ROOT / 'skills/behavior-rebuild/scripts/validate.py'),
+        result = subprocess.run([sys.executable, str(ROOT / 'skills/the-maid-rebuild/scripts/validate.py'),
                                  str(self.root), '--stage', stage, '--run', 'runs/demo.json',
                                  '--candidate', 'demo-v1', '--json'], capture_output=True, text=True)
         payload = json.loads(result.stdout)

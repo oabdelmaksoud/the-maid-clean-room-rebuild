@@ -12,7 +12,7 @@ From the repository root:
 
 ```sh
 python3 examples/delimited-notebook/run_demo.py --output ../behavior-rebuild-demo
-python3 skills/behavior-rebuild/scripts/validate.py ../behavior-rebuild-demo --stage acceptance --run runs/demo.json --candidate demo-v1
+python3 skills/the-maid-rebuild/scripts/validate.py ../behavior-rebuild-demo --stage acceptance --run runs/demo.json --candidate demo-v1
 ```
 
 Use Python 3.11+ and a new destination outside this canonical example. The runner copies the manifest and packet, writes result artifacts, and creates `runs/demo.json` bound to the manifest's exact bytes. It refuses an existing destination. Choose another path for another run.

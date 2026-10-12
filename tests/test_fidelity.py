@@ -9,7 +9,7 @@ import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-CLI = ROOT / 'skills/behavior-rebuild/scripts/fidelity.py'
+CLI = ROOT / 'skills/the-maid-rebuild/scripts/fidelity.py'
 
 
 class FidelityTests(unittest.TestCase):

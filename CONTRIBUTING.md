@@ -1,6 +1,6 @@
 # Contributing
 
-Keep the canonical distribution under `skills/behavior-rebuild/` self-contained. Its instructions, references, templates, and scripts must work when that directory is copied alone. Root documentation and examples support repository users without becoming hidden skill dependencies.
+Keep the canonical distribution under `skills/the-maid-rebuild/` self-contained. Its instructions, references, templates, and scripts must work when that directory is copied alone. Root documentation and examples support repository users without becoming hidden skill dependencies.
 
 Before changing a record contract, inspect existing examples and negative tests. Version incompatible changes, update the templates, and add a fixture demonstrating the rule. Preserve historical corpus and run identities. Keep validation read-only, offline, bounded, and independent of agent runtime packages.
 
