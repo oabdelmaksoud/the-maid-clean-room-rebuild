@@ -1,0 +1,603 @@
+{
+  "format_version": 1,
+  "objective": "faithful_reimplementation",
+  "user_request": "test it on the chess app again to verify it catches the fidelity gaps",
+  "request_evidence": {
+    "path": "evidence/request.md",
+    "sha256": "ae6585ce907878adaaca7c105a5e2c33d754e97be7cb77a110f1a5e37f2c3270"
+  },
+  "intent_review": {
+    "reviewer": "root scope attestation",
+    "approved": true,
+    "evidence": [
+      {
+        "path": "evidence/request.md",
+        "sha256": "ae6585ce907878adaaca7c105a5e2c33d754e97be7cb77a110f1a5e37f2c3270"
+      }
+    ]
+  },
+  "target": {
+    "name": "Apple Chess",
+    "version": "3.18 build Chess-600.4",
+    "platform": "macOS",
+    "runtime": "native",
+    "evidence": [
+      {
+        "path": "evidence/prior-target.md",
+        "sha256": "941fde11e24cdd1b2051321825480c08ebd8c68011743e89d9cd0f46331eb227"
+      },
+      {
+        "path": "evidence/fresh-target.md",
+        "sha256": "705a8df57d2dff83335a958cdea49e9b0aba2912b4dba3c79adbd0f93a8e19ed"
+      }
+    ]
+  },
+  "surfaces": [
+    {
+      "id": "board",
+      "description": "Board rendering and coordinate accessibility",
+      "evidence": [
+        {
+          "path": "evidence/prior-target.md",
+          "sha256": "941fde11e24cdd1b2051321825480c08ebd8c68011743e89d9cd0f46331eb227"
+        },
+        {
+          "path": "evidence/fresh-target.md",
+          "sha256": "705a8df57d2dff83335a958cdea49e9b0aba2912b4dba3c79adbd0f93a8e19ed"
+        }
+      ],
+      "feature_ids": [
+        "board-3d",
+        "camera-gestures",
+        "board-labels",
+        "opening-turn"
+      ]
+    },
+    {
+      "id": "settings",
+      "description": "Styles, speech and computer strength settings",
+      "evidence": [
+        {
+          "path": "evidence/prior-target.md",
+          "sha256": "941fde11e24cdd1b2051321825480c08ebd8c68011743e89d9cd0f46331eb227"
+        },
+        {
+          "path": "evidence/fresh-target.md",
+          "sha256": "705a8df57d2dff83335a958cdea49e9b0aba2912b4dba3c79adbd0f93a8e19ed"
+        }
+      ],
+      "feature_ids": [
+        "board-styles",
+        "speech-controls",
+        "speech-output",
+        "computer-strength"
+      ]
+    },
+    {
+      "id": "new-game",
+      "description": "Modes and variants",
+      "evidence": [
+        {
+          "path": "evidence/prior-target.md",
+          "sha256": "941fde11e24cdd1b2051321825480c08ebd8c68011743e89d9cd0f46331eb227"
+        },
+        {
+          "path": "evidence/fresh-target.md",
+          "sha256": "705a8df57d2dff83335a958cdea49e9b0aba2912b4dba3c79adbd0f93a8e19ed"
+        }
+      ],
+      "feature_ids": [
+        "variants",
+        "local-modes",
+        "game-center"
+      ]
+    },
+    {
+      "id": "game-actions",
+      "description": "Hint and take-back availability",
+      "evidence": [
+        {
+          "path": "evidence/prior-target.md",
+          "sha256": "941fde11e24cdd1b2051321825480c08ebd8c68011743e89d9cd0f46331eb227"
+        },
+        {
+          "path": "evidence/fresh-target.md",
+          "sha256": "705a8df57d2dff83335a958cdea49e9b0aba2912b4dba3c79adbd0f93a8e19ed"
+        }
+      ],
+      "feature_ids": [
+        "local-hint-undo"
+      ]
+    },
+    {
+      "id": "documents",
+      "description": "Native document and interchange workflow",
+      "evidence": [
+        {
+          "path": "evidence/prior-target.md",
+          "sha256": "941fde11e24cdd1b2051321825480c08ebd8c68011743e89d9cd0f46331eb227"
+        },
+        {
+          "path": "evidence/fresh-target.md",
+          "sha256": "705a8df57d2dff83335a958cdea49e9b0aba2912b4dba3c79adbd0f93a8e19ed"
+        }
+      ],
+      "feature_ids": [
+        "target-files-pgn",
+        "native-document-commands"
+      ]
+    },
+    {
+      "id": "platform",
+      "description": "Native macOS execution",
+      "evidence": [
+        {
+          "path": "evidence/prior-target.md",
+          "sha256": "941fde11e24cdd1b2051321825480c08ebd8c68011743e89d9cd0f46331eb227"
+        },
+        {
+          "path": "evidence/fresh-target.md",
+          "sha256": "705a8df57d2dff83335a958cdea49e9b0aba2912b4dba3c79adbd0f93a8e19ed"
+        }
+      ],
+      "feature_ids": [
+        "native-platform"
+      ]
+    }
+  ],
+  "completeness": {
+    "reviewer": "root limited inventory attestation",
+    "reviewed": false,
+    "evidence": [
+      {
+        "path": "evidence/inventory-review.md",
+        "sha256": "81760dc1a8a2e5b341347ac1d4786e2b3584fe688ff14d90d078ee9b534c0ead"
+      }
+    ]
+  },
+  "features": [
+    {
+      "id": "board-3d",
+      "dimension": "visual",
+      "critical": true,
+      "description": "Three-dimensional board representation",
+      "surface_ids": [
+        "board"
+      ],
+      "case_ids": [
+        "case-board-3d"
+      ],
+      "target_evidence": [
+        {
+          "path": "evidence/prior-target.md",
+          "sha256": "941fde11e24cdd1b2051321825480c08ebd8c68011743e89d9cd0f46331eb227"
+        }
+      ]
+    },
+    {
+      "id": "board-styles",
+      "dimension": "visual",
+      "critical": true,
+      "description": "Wood, Marble and Metal style controls",
+      "surface_ids": [
+        "settings"
+      ],
+      "case_ids": [
+        "case-board-styles"
+      ],
+      "target_evidence": [
+        {
+          "path": "evidence/fresh-target.md",
+          "sha256": "705a8df57d2dff83335a958cdea49e9b0aba2912b4dba3c79adbd0f93a8e19ed"
+        }
+      ]
+    },
+    {
+      "id": "camera-gestures",
+      "dimension": "journey",
+      "critical": true,
+      "description": "Target camera and 3D view gesture semantics",
+      "surface_ids": [
+        "board"
+      ],
+      "case_ids": [
+        "case-camera-gestures"
+      ],
+      "target_evidence": [
+        {
+          "path": "evidence/fresh-target.md",
+          "sha256": "705a8df57d2dff83335a958cdea49e9b0aba2912b4dba3c79adbd0f93a8e19ed"
+        }
+      ]
+    },
+    {
+      "id": "variants",
+      "dimension": "behavior",
+      "critical": true,
+      "description": "Regular, Crazyhouse, Suicide and Losers variants",
+      "surface_ids": [
+        "new-game"
+      ],
+      "case_ids": [
+        "case-variants"
+      ],
+      "target_evidence": [
+        {
+          "path": "evidence/fresh-target.md",
+          "sha256": "705a8df57d2dff83335a958cdea49e9b0aba2912b4dba3c79adbd0f93a8e19ed"
+        }
+      ]
+    },
+    {
+      "id": "local-hint-undo",
+      "dimension": "behavior",
+      "critical": true,
+      "description": "Local one-ply hint and take-back enabled policy",
+      "surface_ids": [
+        "game-actions"
+      ],
+      "case_ids": [
+        "case-local-hint-undo"
+      ],
+      "target_evidence": [
+        {
+          "path": "evidence/prior-target.md",
+          "sha256": "941fde11e24cdd1b2051321825480c08ebd8c68011743e89d9cd0f46331eb227"
+        }
+      ]
+    },
+    {
+      "id": "local-modes",
+      "dimension": "behavior",
+      "critical": true,
+      "description": "Four local player/computer arrangements",
+      "surface_ids": [
+        "new-game"
+      ],
+      "case_ids": [
+        "case-local-modes"
+      ],
+      "target_evidence": [
+        {
+          "path": "evidence/prior-target.md",
+          "sha256": "941fde11e24cdd1b2051321825480c08ebd8c68011743e89d9cd0f46331eb227"
+        }
+      ]
+    },
+    {
+      "id": "game-center",
+      "dimension": "platform",
+      "critical": true,
+      "description": "Game Center mode exposed",
+      "surface_ids": [
+        "new-game"
+      ],
+      "case_ids": [
+        "case-game-center"
+      ],
+      "target_evidence": [
+        {
+          "path": "evidence/prior-target.md",
+          "sha256": "941fde11e24cdd1b2051321825480c08ebd8c68011743e89d9cd0f46331eb227"
+        }
+      ]
+    },
+    {
+      "id": "speech-controls",
+      "dimension": "behavior",
+      "critical": true,
+      "description": "Speak Human/Computer Moves and voice choices",
+      "surface_ids": [
+        "settings"
+      ],
+      "case_ids": [
+        "case-speech-controls"
+      ],
+      "target_evidence": [
+        {
+          "path": "evidence/fresh-target.md",
+          "sha256": "705a8df57d2dff83335a958cdea49e9b0aba2912b4dba3c79adbd0f93a8e19ed"
+        }
+      ]
+    },
+    {
+      "id": "speech-output",
+      "dimension": "behavior",
+      "critical": true,
+      "description": "Actual spoken output and voice selection behavior",
+      "surface_ids": [
+        "settings"
+      ],
+      "case_ids": [
+        "case-speech-output"
+      ],
+      "target_evidence": [
+        {
+          "path": "evidence/fresh-target.md",
+          "sha256": "705a8df57d2dff83335a958cdea49e9b0aba2912b4dba3c79adbd0f93a8e19ed"
+        }
+      ]
+    },
+    {
+      "id": "target-files-pgn",
+      "dimension": "interoperability",
+      "critical": true,
+      "description": "Target save files and PGN exchange",
+      "surface_ids": [
+        "documents"
+      ],
+      "case_ids": [
+        "case-target-files-pgn"
+      ],
+      "target_evidence": [
+        {
+          "path": "evidence/fresh-target.md",
+          "sha256": "705a8df57d2dff83335a958cdea49e9b0aba2912b4dba3c79adbd0f93a8e19ed"
+        }
+      ]
+    },
+    {
+      "id": "native-document-commands",
+      "dimension": "interoperability",
+      "critical": true,
+      "description": "Native document commands beyond import/export",
+      "surface_ids": [
+        "documents"
+      ],
+      "case_ids": [
+        "case-native-document-commands"
+      ],
+      "target_evidence": [
+        {
+          "path": "evidence/fresh-target.md",
+          "sha256": "705a8df57d2dff83335a958cdea49e9b0aba2912b4dba3c79adbd0f93a8e19ed"
+        }
+      ]
+    },
+    {
+      "id": "computer-strength",
+      "dimension": "behavior",
+      "critical": true,
+      "description": "Computer strength/speed equivalence",
+      "surface_ids": [
+        "settings"
+      ],
+      "case_ids": [
+        "case-computer-strength"
+      ],
+      "target_evidence": [
+        {
+          "path": "evidence/fresh-target.md",
+          "sha256": "705a8df57d2dff83335a958cdea49e9b0aba2912b4dba3c79adbd0f93a8e19ed"
+        }
+      ]
+    },
+    {
+      "id": "native-platform",
+      "dimension": "platform",
+      "critical": true,
+      "description": "Native macOS app execution",
+      "surface_ids": [
+        "platform"
+      ],
+      "case_ids": [
+        "case-native-platform"
+      ],
+      "target_evidence": [
+        {
+          "path": "evidence/prior-target.md",
+          "sha256": "941fde11e24cdd1b2051321825480c08ebd8c68011743e89d9cd0f46331eb227"
+        },
+        {
+          "path": "evidence/fresh-target.md",
+          "sha256": "705a8df57d2dff83335a958cdea49e9b0aba2912b4dba3c79adbd0f93a8e19ed"
+        }
+      ]
+    },
+    {
+      "id": "board-labels",
+      "dimension": "behavior",
+      "critical": true,
+      "description": "64 accessible coordinate squares",
+      "surface_ids": [
+        "board"
+      ],
+      "case_ids": [
+        "case-board-labels"
+      ],
+      "target_evidence": [
+        {
+          "path": "evidence/prior-target.md",
+          "sha256": "941fde11e24cdd1b2051321825480c08ebd8c68011743e89d9cd0f46331eb227"
+        }
+      ]
+    },
+    {
+      "id": "opening-turn",
+      "dimension": "journey",
+      "critical": true,
+      "description": "Observed opening squares turn and move count",
+      "surface_ids": [
+        "board"
+      ],
+      "case_ids": [
+        "case-opening-turn"
+      ],
+      "target_evidence": [
+        {
+          "path": "evidence/prior-target.md",
+          "sha256": "941fde11e24cdd1b2051321825480c08ebd8c68011743e89d9cd0f46331eb227"
+        }
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "case-board-3d",
+      "feature_ids": [
+        "board-3d"
+      ],
+      "expected": {
+        "board_dimension": 3
+      }
+    },
+    {
+      "id": "case-board-styles",
+      "feature_ids": [
+        "board-styles"
+      ],
+      "expected": {
+        "styles": [
+          "Wood",
+          "Marble",
+          "Metal"
+        ]
+      }
+    },
+    {
+      "id": "case-camera-gestures",
+      "feature_ids": [
+        "camera-gestures"
+      ],
+      "expected": {
+        "target_camera_semantics": "not_observed"
+      }
+    },
+    {
+      "id": "case-variants",
+      "feature_ids": [
+        "variants"
+      ],
+      "expected": {
+        "variants": [
+          "Regular",
+          "Crazyhouse",
+          "Suicide",
+          "Losers"
+        ]
+      }
+    },
+    {
+      "id": "case-local-hint-undo",
+      "feature_ids": [
+        "local-hint-undo"
+      ],
+      "expected": {
+        "hint_enabled": false,
+        "undo_enabled": false
+      }
+    },
+    {
+      "id": "case-local-modes",
+      "feature_ids": [
+        "local-modes"
+      ],
+      "expected": {
+        "modes": [
+          "human-human",
+          "human-computer",
+          "computer-human",
+          "computer-computer"
+        ]
+      }
+    },
+    {
+      "id": "case-game-center",
+      "feature_ids": [
+        "game-center"
+      ],
+      "expected": {
+        "game_center_option": true
+      }
+    },
+    {
+      "id": "case-speech-controls",
+      "feature_ids": [
+        "speech-controls"
+      ],
+      "expected": {
+        "speech_controls": [
+          "human",
+          "computer",
+          "primary-voice",
+          "alternate-voice"
+        ]
+      }
+    },
+    {
+      "id": "case-speech-output",
+      "feature_ids": [
+        "speech-output"
+      ],
+      "expected": {
+        "target_output": "not_executed"
+      }
+    },
+    {
+      "id": "case-target-files-pgn",
+      "feature_ids": [
+        "target-files-pgn"
+      ],
+      "expected": {
+        "target_file_bytes_and_pgn": "not_verified"
+      }
+    },
+    {
+      "id": "case-native-document-commands",
+      "feature_ids": [
+        "native-document-commands"
+      ],
+      "expected": {
+        "commands": [
+          "open-recent",
+          "close-all",
+          "save-as",
+          "duplicate",
+          "rename",
+          "move-to",
+          "share"
+        ]
+      }
+    },
+    {
+      "id": "case-computer-strength",
+      "feature_ids": [
+        "computer-strength"
+      ],
+      "expected": {
+        "target_strength": "not_measured"
+      }
+    },
+    {
+      "id": "case-native-platform",
+      "feature_ids": [
+        "native-platform"
+      ],
+      "expected": {
+        "platform": "macOS",
+        "runtime": "native"
+      }
+    },
+    {
+      "id": "case-board-labels",
+      "feature_ids": [
+        "board-labels"
+      ],
+      "expected": {
+        "squares": 64
+      }
+    },
+    {
+      "id": "case-opening-turn",
+      "feature_ids": [
+        "opening-turn"
+      ],
+      "expected": {
+        "e4": "P",
+        "e6": "p",
+        "turn": "w",
+        "ply": 2
+      }
+    }
+  ]
+}

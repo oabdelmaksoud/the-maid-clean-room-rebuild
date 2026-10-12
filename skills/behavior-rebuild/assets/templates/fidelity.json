@@ -1,0 +1,39 @@
+{
+  "format_version": 1,
+  "contract": {
+    "path": "fidelity-contract.json",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "objective": "faithful_reimplementation",
+  "candidate": {
+    "id": "unselected-candidate",
+    "platform": "Unrecorded",
+    "runtime": "native",
+    "evidence": []
+  },
+  "cases": [
+    {
+      "id": "main-case",
+      "feature_ids": [
+        "main-behavior"
+      ],
+      "candidate_id": "unselected-candidate",
+      "status": "unknown",
+      "evidence": [],
+      "result": null
+    }
+  ],
+  "features": [
+    {
+      "id": "main-behavior",
+      "status": "unknown",
+      "candidate_id": "unselected-candidate",
+      "candidate_evidence": [],
+      "case_ids": [
+        "main-case"
+      ],
+      "baseline_origin": "not_applicable",
+      "deviation": null
+    }
+  ]
+}

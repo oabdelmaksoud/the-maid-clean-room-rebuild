@@ -1,5 +1,15 @@
 # Release verification records
 
+## Version 0.3.0 — October 11, 2026
+
+The local macOS suite passed **75 unit/CLI tests**, including 23 fidelity tests. The new tests cover objective changes, missing feature/case mappings, original-design visual baselines, unauthorized deviations, runtime substitution, typed actual outcomes, candidate identity, evidence integrity, unsafe paths and escaped terminal output. On systems without symlink privileges, the nonregular-evidence test exercises a directory-as-file rejection instead; that fallback does not establish symlink coverage.
+
+The [chess fidelity trial](../examples/chess-fidelity/README.md) was run against the unchanged Quiet Knight HTML identity `6f012bd249b247b2cbe173d1b0b52771bf80ddffcb02869f74ff6d63b62df4e3`. The old five-case bounded evidence gate still passed, and a fresh rules run passed 476 tests. The new fidelity gate returned **BLOCKED**: 15 recorded feature groups, 4 matches, 7 mismatches, 4 unknowns and no deviations. It also rejected two original-design visual baselines and retained an incomplete-discovery blocker. All seven forged pass labels were rejected by comparing unchanged actual outcomes with frozen expectations.
+
+Independent code review reran the 75-test suite, nine additional probes and the chess trial; a separate verifier also reran the suite and trial. This tests gap detection using partial fresh native menu/setup observations plus explicitly retrospective evidence. It does not constitute a fresh exhaustive target probe, repair the chess candidate, authenticate evidence authorship or measure a whole-product fidelity percentage.
+
+The CI matrix now includes this expected-rejection chess trial on each of the six OS/Python combinations. A workflow definition or local pass does not establish remote success; inspect the run for the exact published revision. No tagged release is asserted.
+
 ## Version 0.2.0 — October 11, 2026
 
 Local macOS verification passed all 52 unit/CLI tests. A separate code reviewer passed the same suite and 1,000 randomized pixel-comparison probes. New cases cover ordered journeys, exact state types, image dimensions and budgets, malformed images, forged passes, altered hashes, symlinks, optional pass claims, and bounded aggregate comparison work.

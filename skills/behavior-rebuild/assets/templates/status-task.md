@@ -1,13 +1,20 @@
 # Resumable task and status
 
-- Candidate and commit: [immutable identifier]
-- Bounded outcome: [one observable change]
-- Owned files: [explicit paths]
+- Original user request and hashed evidence: [exact text and relative evidence reference]
+- Locked objective: [faithful_reimplementation / original_redesign / bounded_workflow]
+- Target: [exact product/version/platform/runtime and target path or identity]
+- Intended deliverable: [requested runtime and required compatibility]
+- User scope decisions: [actual instruction/evidence, or none]
+- Workspace and candidate path/revision: [absolute checkout/path and immutable identifier]
+- Bounded assigned outcome: [one observable change within the locked objective]
+- Owned files: [explicit paths; preserve concurrent edits]
 - Dependencies: [required inputs and prerequisite work]
-- Approved packet digest: [manifest SHA256]
-- Current evidence: [commands run, exit codes, result paths]
-- Unresolved gaps: [ranked IDs and next recovery action]
-- Next action: [specific reproducible step]
-- Completion criterion: [case/trial and review evidence]
+- Approved packet and fidelity contract digests: [file identities]
+- Intent/completeness/packet review: [separate records and actual dispositions]
+- Current evidence: [commands, exit codes, run/candidate IDs and result paths]
+- Coverage: [per-dimension matched/mismatched/unknown/deviation counts and denominators]
+- Unresolved gaps: [ranked IDs, criticality and next recovery action]
+- Next action: [specific reproducible command or observed UI step on the exact target/candidate]
+- Completion criterion: [case/trial, native/file evidence as applicable, and independent review]
 
-Feature inventory and completed tasks do not establish real-work readiness. Preserve historical runs; select an explicit run and candidate when evaluating acceptance.
+Before resuming, verify these identities against current filesystem/worktree state. Do not switch target or objective, discard unknowns, or infer permission to redesign from a passing bounded suite. Completed tasks and candidate regression images do not establish target fidelity. Preserve historical runs and select an explicit run/candidate.

@@ -1,0 +1,25 @@
+{
+  "trial_success": true,
+  "started_at": "2026-10-12T02:10:42.668016+00:00",
+  "completed_at": "2026-10-12T02:10:42.807822+00:00",
+  "candidate_fidelity": "BLOCKED",
+  "assessment": "Retrospective recorded evidence plus partial fresh parent native-menu observations; no new app build or exhaustive probe",
+  "candidate_html_sha256": "6f012bd249b247b2cbe173d1b0b52771bf80ddffcb02869f74ff6d63b62df4e3",
+  "candidate_html_locally_checked": false,
+  "recorded_feature_counts": {
+    "match": 4,
+    "mismatch": 7,
+    "unknown": 4,
+    "deviation": 0
+  },
+  "recorded_blocker_counts": {
+    "INVENTORY_INCOMPLETE": 1,
+    "ORIGINAL_VISUAL_BASELINE": 2,
+    "FIDELITY_MISMATCH": 7,
+    "FIDELITY_UNKNOWN": 4
+  },
+  "forged_pass_oracle_mismatches": 7,
+  "gate_script_sha256": "e4190eb40067ead649cd2abcf508322da466bfe06eb893887a27b2e79e079555",
+  "contract_sha256": "41f2e013b49f1acd746dfb9c3b8f01a60ffa1ad6072df0f68f0b38f880feb499",
+  "old_bounded_scope": "Parent freshly reran five-case acceptance and 476 rules successfully; this does not establish target fidelity"
+}

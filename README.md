@@ -7,7 +7,7 @@
 A practical agent skill for turning permitted research into a reviewed contract,
 a fresh implementation, and reproducible acceptance evidence.
 
-<img alt="Python 3.11 or later" src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=flat-square"> <img alt="MIT license" src="https://img.shields.io/badge/License-MIT-507D64?style=flat-square"> <img alt="Version 0.2.0" src="https://img.shields.io/badge/Version-0.2.0-725AC1?style=flat-square">
+<img alt="Python 3.11 or later" src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=flat-square"> <img alt="MIT license" src="https://img.shields.io/badge/License-MIT-507D64?style=flat-square"> <img alt="Version 0.3.0" src="https://img.shields.io/badge/Version-0.3.0-725AC1?style=flat-square">
 
 [The method](#the-method) · [Quick start](#quick-start) · [Try it](#try-it) · [Evidence](#evidence-so-far) · [Reference](#reference)
 
@@ -15,7 +15,7 @@ a fresh implementation, and reproducible acceptance evidence.
 
 ---
 
-Good rebuilds start with a clear account of what a product does—and end with evidence that the new implementation meets its declared contract. The Maid keeps observations, design decisions, permissions, unknowns, and test results connected along the way.
+Good rebuilds start with the user's exact request and a clear account of what a product does—and end with evidence against that requested objective. A narrowed contract or attractive redesign cannot silently replace a faithful rebuild. The Maid keeps observations, design decisions, permissions, unknowns, and test results connected along the way.
 
 Bring your own product, stack, and authorized access. The kit supplies the method, reusable records, and local checks. Its core Python tools use only the standard library and run offline; validators and reporters read records without changing them.
 
@@ -37,6 +37,8 @@ flowchart LR
 |---|---|---|
 | Find out what the workflow does. | Prepare what the builder needs. | Check what the candidate actually achieves. |
 | Scoped observations, source-use decisions, unknowns, and exclusions. | An original implementation contract, reviewed packet, hashes, and exposure records. | Explicit acceptance evidence, open gaps, and prioritized repair work. |
+
+Lock the requested objective as faithful reimplementation, user-authorized original redesign, or explicitly bounded workflow. Inventory all requested surfaces before handoff and keep intent review separate from packet review. Unknown evidence blocks the relevant fidelity claim; it does not grant permission to reduce scope.
 
 Choose one mode per task. Keep research, implementation, and review in separate contexts where required, and disclose prior exposure. The skill guides that work; it does not execute target access or create an isolation boundary.
 
@@ -104,7 +106,7 @@ The Maid now checks two UI evidence types alongside output assertions:
 | **Visual pixels** | A rendered checkpoint that differs beyond its declared RGB pixel budgets. | Hashed baseline, dimensions, capture conditions, and tolerances. |
 | **Journey trace** | Missing/reordered actions or incorrect observed DOM, storage, or output state. | Ordered actions and exact, typed state assertions. |
 
-These are separate gates: a correct-looking button can still fail after a click or reload. Every automated pass claim is recomputed from the recorded output. Browser capture is separate from the offline validator; the optional browser example uses Playwright and Pillow.
+These are separate gates: a correct-looking button can still fail after a click or reload. A baseline from an approved original design supports candidate regression, not fidelity to the target. Faithful rebuilds require paired target/candidate evidence, actual native execution where requested, and real file exchange when compatibility is required. Every automated pass claim is recomputed from the recorded output. Browser capture is separate from the offline validator; the optional browser example uses Playwright and Pillow.
 
 ```text
 $behavior-rebuild Verify/recover this UI using visual and user-journey validation. Freeze the permitted baselines, capture conditions, and ordered state assertions before execution. Compare the current checks with the added checks using deliberate visual and persistence faults, preserve failures, and independently rerun repairs. Keep REA optional.
@@ -123,6 +125,26 @@ To reproduce the browser comparison, follow the example's [optional dependency s
 The macOS/Linux example paths above assume the documented setup: a separate Python environment with Pillow and a separate Node directory with Playwright and Chromium. Browser dependencies are required only for capture. The runner retains failed evidence, compares the narrow and expanded suites, and checks the generated records with the portable validator.
 
 > **Portable by default.** REA can help with permitted discovery when needed. Neither REA nor Replica is required. Discovery outputs still need review; proprietary source, bundles, private endpoint material, and copied assets stay out of the handoff.
+
+## Fidelity beyond a passing subset
+
+The [fidelity guide](skills/behavior-rebuild/references/fidelity.md) keeps the original request, complete surface/feature inventory and reviewed objective linked to an explicit candidate. Use the [fidelity contract](skills/behavior-rebuild/assets/templates/fidelity-contract.json) and [evaluation record](skills/behavior-rebuild/assets/templates/fidelity.json) alongside existing project records:
+
+```sh
+python3 skills/behavior-rebuild/scripts/fidelity.py PROJECT_DIR --json
+```
+
+The local gate checks hashes, case bindings and recorded outcomes. It does not observe the product or authenticate the records. Report matched, mismatched, unknown and user-authorized deviations per dimension, retaining every inventoried feature in denominators. Existing bounded projects remain supported and their results stay bounded.
+
+**Chess retest: the old bounded acceptance still passes; faithful acceptance is blocked.** The unchanged Quiet Knight candidate passed a fresh 476-rule-test run and its previous five-case evidence gate. The new fidelity assessment records **15 feature groups: 4 matches, 7 mismatches and 4 unknowns**, with no authorized deviations. It rejects the original-design visual baselines and flags incomplete target discovery. These are counts within the recorded inventory, not a whole-product fidelity percentage.
+
+Fresh native inspection confirmed reference variants, styles, speech settings and document-menu entries, and compared the rebuilt app's setup and menu. Other evidence is explicitly retrospective; the trial does not perform exhaustive native automation or claim the chess app has been repaired. See the [reproducible chess assessment](examples/chess-fidelity/README.md).
+
+```sh
+python3 examples/chess-fidelity/run_trial.py --output ../chess-fidelity-trial
+```
+
+The trial succeeds only when the fidelity gate rejects the known gaps and its negative controls return the expected failures. The standalone fidelity command returns exit `1` for this chess candidate.
 
 ## Evidence so far
 
@@ -144,6 +166,7 @@ Start a real project with the [templates](skills/behavior-rebuild/assets/templat
 | Read this | For this |
 |---|---|
 | [Method](docs/method.md) | Research, handoff, implementation, and review boundaries. |
+| [Fidelity](skills/behavior-rebuild/references/fidelity.md) | Original request, inventory, paired runtime evidence and dimensional coverage. |
 | [Record format](skills/behavior-rebuild/references/record-format.md) | Exact fields in the bespoke versioned JSON records. |
 | [Visual and journey validation](skills/behavior-rebuild/references/visual-and-journey.md) | Frozen visual baselines, ordered state assertions, capture conditions, and limitations. |
 | [Quality gates](docs/quality-gates.md) | What each check can support. |
@@ -187,8 +210,8 @@ python3 tools/build_release.py --output ../behavior-rebuild-release
 
 The builder checks the tree against `release-files.txt`, then creates:
 
-- `behavior-rebuild-kit-0.2.0.zip` — repository resources.
-- `behavior-rebuild-skill-0.2.0.zip` — the self-contained `behavior-rebuild/` folder.
+- `behavior-rebuild-kit-0.3.0.zip` — repository resources.
+- `behavior-rebuild-skill-0.3.0.zip` — the self-contained `behavior-rebuild/` folder.
 - `SHA256SUMS` — archive byte identities.
 
 Choose a different destination if it already exists. Adding or removing a release file requires updating the inventory. Archives, hashes, and local preparation do not publish anything or constitute publication approval.

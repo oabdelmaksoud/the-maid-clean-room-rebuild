@@ -1,0 +1,77 @@
+{
+  "format_version": 1,
+  "objective": "faithful_reimplementation",
+  "user_request": "Replace this text with the exact original request.",
+  "request_evidence": {
+    "path": "evidence/user-request.txt",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "target": {
+    "name": "Unselected target",
+    "version": "Unrecorded",
+    "platform": "Unrecorded",
+    "runtime": "native",
+    "evidence": [
+      {
+        "path": "evidence/target-identity.txt",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    ]
+  },
+  "intent_review": {
+    "reviewer": "",
+    "approved": false,
+    "evidence": []
+  },
+  "surfaces": [
+    {
+      "id": "main",
+      "description": "Replace with an observed surface within the requested scope.",
+      "evidence": [
+        {
+          "path": "evidence/target-surface.txt",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "feature_ids": [
+        "main-behavior"
+      ]
+    }
+  ],
+  "completeness": {
+    "reviewer": "",
+    "reviewed": false,
+    "evidence": []
+  },
+  "features": [
+    {
+      "id": "main-behavior",
+      "dimension": "behavior",
+      "critical": true,
+      "description": "Replace with a target-derived requirement; inventory all requested dimensions and features.",
+      "surface_ids": [
+        "main"
+      ],
+      "case_ids": [
+        "main-case"
+      ],
+      "target_evidence": [
+        {
+          "path": "evidence/target-observation.txt",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "main-case",
+      "feature_ids": [
+        "main-behavior"
+      ],
+      "expected": {
+        "replace_with": "typed observed target outcome before candidate execution"
+      }
+    }
+  ]
+}

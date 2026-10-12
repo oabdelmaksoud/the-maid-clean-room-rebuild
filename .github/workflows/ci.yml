@@ -18,6 +18,7 @@ jobs:
       - run: python -m unittest discover -s tests -v
       - run: python examples/delimited-notebook/run_demo.py --output "${{ runner.temp }}/behavior-demo"
       - run: python skills/behavior-rebuild/scripts/validate.py "${{ runner.temp }}/behavior-demo" --stage acceptance --run runs/demo.json --candidate demo-v1 --json
+      - run: python examples/chess-fidelity/run_trial.py --output "${{ runner.temp }}/chess-fidelity"
       - run: python tools/build_release.py --output "${{ runner.temp }}/behavior-release"
   browser-trial:
     runs-on: ubuntu-latest

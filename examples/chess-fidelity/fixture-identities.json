@@ -1,0 +1,10 @@
+{
+  "candidate_html_sha256": "6f012bd249b247b2cbe173d1b0b52771bf80ddffcb02869f74ff6d63b62df4e3",
+  "target_observation_sha256": "49a3f5d4e390f2a23b840eeaeaf25ba6e2091ea8088481eedc5ee9907bbb0126",
+  "candidate_report_sha256": "c2a40df35e8521c914b99104a60ce97ba73357aa726cc9937d9b2c8cc1d81243",
+  "assessment": "Retrospective unchanged candidate, partial fresh parent-native-menu inspection. No exhaustive target inventory.",
+  "features": 15,
+  "matched": 4,
+  "mismatched": 7,
+  "unknown": 4
+}

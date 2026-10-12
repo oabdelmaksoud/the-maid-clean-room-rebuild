@@ -1,0 +1,4 @@
+# Current evaluation scope: root attestation
+The parent evaluator approves a diagnostic faithful_reimplementation assessment of the existing unchanged Quiet Knight against Apple Chess visible behavior. It reports the current user request as "test it on the chess app again to verify it catches the fidelity gaps" and the prior objective as "accuracy close to 100% of a clone".
+This is a retrospective fidelity assessment, not a claim that the earlier original-design build contract was faithful. No user-authorized deviations are asserted. Known features and explicit unknowns must be inventoried; exhaustive target coverage is not claimed.
+Attesting evaluator: root. Attestation received October 11, 2026 local time. This text is a sanitized evaluator record, not an authenticated transcript or independent intent review of the original conversation.

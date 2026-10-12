@@ -1,0 +1,8 @@
+{
+  "case_id": "case-native-platform",
+  "candidate_id": "quiet-knight-6f012bd249b2",
+  "actual": {
+    "platform": "macOS",
+    "runtime": "native"
+  }
+}

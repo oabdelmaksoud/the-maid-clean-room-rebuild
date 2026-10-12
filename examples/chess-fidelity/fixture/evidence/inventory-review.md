@@ -1,0 +1,2 @@
+# Inventory review limit
+Root authorized this diagnostic assessment. The inventory includes every observed feature family supplied to this fixture and explicit unknowns. Root and fixture author do not claim exhaustive discovery of Apple Chess. Therefore completeness.reviewed is false; this correctly adds an inventory blocker alongside independently established candidate mismatches. It must never be the sole reason this trial counts as successfully blocked.

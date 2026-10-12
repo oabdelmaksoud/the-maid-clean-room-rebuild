@@ -1,0 +1,12 @@
+{
+  "case_id": "case-local-modes",
+  "candidate_id": "quiet-knight-6f012bd249b2",
+  "actual": {
+    "modes": [
+      "human-human",
+      "human-computer",
+      "computer-human",
+      "computer-computer"
+    ]
+  }
+}

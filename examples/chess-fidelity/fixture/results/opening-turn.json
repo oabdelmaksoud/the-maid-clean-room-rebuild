@@ -1,0 +1,10 @@
+{
+  "case_id": "case-opening-turn",
+  "candidate_id": "quiet-knight-6f012bd249b2",
+  "actual": {
+    "e4": "P",
+    "e6": "p",
+    "turn": "w",
+    "ply": 2
+  }
+}

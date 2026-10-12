@@ -6,7 +6,7 @@ A UI contract has at least two distinct questions: does the checkpoint look righ
 
 Use the [UI validation template](../assets/templates/ui-validation.md). Record permitted evidence, baseline provenance, original synthetic inputs, expected states, screenshot checkpoints, and explicit exclusions. Have the packet reviewed before implementation. Keep raw research and evaluator baselines outside the implementer's packet unless specifically permitted; the current packet format accepts only Markdown, text, JSON, and CSV.
 
-Freeze expected journeys and visual baselines before running the candidate. A permitted reference capture or independently approved original design can supply a baseline; identify which it is. Do not derive expectations from the candidate under test. Hash each baseline and bind the exact project manifest in the explicit run. Changing a baseline or tolerance creates a new contract and run; retain the previous evidence and rationale. Never automatically rebaseline after a failure.
+Freeze expected journeys and visual baselines before running the candidate. A permitted target capture supplies the baseline for faithful visual comparison. An independently approved original design supplies a candidate regression baseline only; it cannot establish target fidelity. Identify the baseline origin in every result. Do not derive expectations from the candidate under test. Hash each baseline and bind the exact project manifest in the explicit run. Changing a baseline or tolerance creates a new contract and run; retain the previous evidence and rationale. Never automatically rebaseline after a failure.
 
 ## Capture repeatably
 
@@ -41,3 +41,12 @@ Every automated pass claim is independently recomputed by the validator from its
 ## Optional discovery tools
 
 REA can assist permitted observations when useful. It is neither installed nor required by this skill. Do not put proprietary source, extracted bundles, private endpoint material, credentials, or copied assets into the handoff. A discovery tool's output is evidence requiring review, not permission to broaden access. Replica is also not a dependency. Keep the default workflow portable and use the same evidence boundaries whichever capture tool you choose.
+
+
+## Target fidelity versus candidate regression
+
+Apply the locked objective in [fidelity](fidelity.md). Approval of an attractive original design does not authorize replacing a faithful rebuild. Keep paired target/candidate captures and ordered observations for every requested surface, under comparable state and capture conditions. Unavailable target evidence remains unknown or blocked; a candidate-only screenshot cannot close it.
+
+Run native deliverables in their actual native runtime, including launch/relaunch, complete board or content visibility, menus, focus, keyboard actions, dialogs and file panels. Browser testing can complement this evidence but cannot substitute for it. If file compatibility is requested, exchange actual files in both directions and inspect reopened state and failure behavior. Freeze the target-derived expected outcomes before those candidate trials.
+
+Report regression results separately from target matches, dimension coverage and unresolved surfaces. A negative visual control proves detection of that particular fault within the declared budgets. It does not prove exhaustive fidelity.

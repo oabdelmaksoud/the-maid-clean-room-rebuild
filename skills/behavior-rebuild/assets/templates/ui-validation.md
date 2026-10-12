@@ -5,10 +5,13 @@ Complete this record before candidate execution. Unresolved fields remain blocke
 ## Scope and provenance
 
 - Product/version and permitted observation scope:
+- Frozen fidelity contract digest, objective, feature IDs and requested runtime:
 - Original synthetic data and initialization:
 - Baseline origin (permitted reference or approved original design):
+- For faithful rebuilds: target capture identity and paired candidate checkpoint; original-design baselines establish regression only:
 - Reviewer and exposure record:
 - Required workflows and explicit exclusions:
+- User instruction authorizing each deviation, with evidence reference (keep deviations in the inventory):
 
 ## Capture conditions
 
@@ -33,6 +36,8 @@ Retain original PNG evidence and RGB PPM comparison files. Freeze the baseline a
 |---|---|---|---|---|
 
 Use nonempty ordered steps and nonempty state objects. Include persistence/reload or error/recovery steps where required. Read actual candidate state; never copy expectations into results.
+
+For faithful rebuilds, run paired target/candidate actions and compare enabled/disabled controls, visible outcomes, persisted state and produced files. Record actual runtime for each side. Mark unobserved paths unknown; a browser run does not discharge a native-runtime obligation.
 
 ## Comparison and recovery
 

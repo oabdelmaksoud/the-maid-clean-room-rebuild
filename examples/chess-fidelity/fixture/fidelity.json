@@ -1,0 +1,521 @@
+{
+  "format_version": 1,
+  "contract": {
+    "path": "fidelity-contract.json",
+    "sha256": "41f2e013b49f1acd746dfb9c3b8f01a60ffa1ad6072df0f68f0b38f880feb499"
+  },
+  "objective": "faithful_reimplementation",
+  "candidate": {
+    "id": "quiet-knight-6f012bd249b2",
+    "platform": "macOS",
+    "runtime": "native",
+    "evidence": [
+      {
+        "path": "evidence/candidate.md",
+        "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "id": "case-board-3d",
+      "feature_ids": [
+        "board-3d"
+      ],
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "status": "failed",
+      "evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "result": {
+        "path": "results/board-3d.json",
+        "sha256": "f1b14a26601cd8cd8a3d45bbf3ee060c12e1d9544b5685481079f5a72963f5cd"
+      }
+    },
+    {
+      "id": "case-board-styles",
+      "feature_ids": [
+        "board-styles"
+      ],
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "status": "failed",
+      "evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "result": {
+        "path": "results/board-styles.json",
+        "sha256": "742a3a029061382b88683cc22bc316ca7fa03ce237f3896df4817efdabcf99bc"
+      }
+    },
+    {
+      "id": "case-camera-gestures",
+      "feature_ids": [
+        "camera-gestures"
+      ],
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "status": "unknown",
+      "evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "result": null
+    },
+    {
+      "id": "case-variants",
+      "feature_ids": [
+        "variants"
+      ],
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "status": "failed",
+      "evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "result": {
+        "path": "results/variants.json",
+        "sha256": "0cf61402fb2cb6a311cac0ecd4bab21e3df340a74a64d49ced1725b09b9c1e8e"
+      }
+    },
+    {
+      "id": "case-local-hint-undo",
+      "feature_ids": [
+        "local-hint-undo"
+      ],
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "status": "failed",
+      "evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "result": {
+        "path": "results/local-hint-undo.json",
+        "sha256": "2f6b4a34b182d40cb9f2151f527b658228858fc54d35e9c618cff4ebd4a51b05"
+      }
+    },
+    {
+      "id": "case-local-modes",
+      "feature_ids": [
+        "local-modes"
+      ],
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "status": "pass",
+      "evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "result": {
+        "path": "results/local-modes.json",
+        "sha256": "2d1918ce5d8d8489f7870d9b1af8db71748930038e972dd43341ace951b1e74c"
+      }
+    },
+    {
+      "id": "case-game-center",
+      "feature_ids": [
+        "game-center"
+      ],
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "status": "failed",
+      "evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "result": {
+        "path": "results/game-center.json",
+        "sha256": "8aea14925d5e54f2548b3ad647bec728f14533197cd07badd2ef433bfdfa8b52"
+      }
+    },
+    {
+      "id": "case-speech-controls",
+      "feature_ids": [
+        "speech-controls"
+      ],
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "status": "failed",
+      "evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "result": {
+        "path": "results/speech-controls.json",
+        "sha256": "8468349e4b24362aa092a60a507321754ce18fe4e31f4e9948bd4d0e1e1716b6"
+      }
+    },
+    {
+      "id": "case-speech-output",
+      "feature_ids": [
+        "speech-output"
+      ],
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "status": "unknown",
+      "evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "result": null
+    },
+    {
+      "id": "case-target-files-pgn",
+      "feature_ids": [
+        "target-files-pgn"
+      ],
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "status": "unknown",
+      "evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "result": null
+    },
+    {
+      "id": "case-native-document-commands",
+      "feature_ids": [
+        "native-document-commands"
+      ],
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "status": "failed",
+      "evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "result": {
+        "path": "results/native-document-commands.json",
+        "sha256": "742b923e415c3ae2e1111c91f7293d930adab40f9c275f7169be3f89be8dfc92"
+      }
+    },
+    {
+      "id": "case-computer-strength",
+      "feature_ids": [
+        "computer-strength"
+      ],
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "status": "unknown",
+      "evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "result": null
+    },
+    {
+      "id": "case-native-platform",
+      "feature_ids": [
+        "native-platform"
+      ],
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "status": "pass",
+      "evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "result": {
+        "path": "results/native-platform.json",
+        "sha256": "59ced10dfaf30019dd0ddc9d0f66c41106d814847a66d9a8171a860eb5699d87"
+      }
+    },
+    {
+      "id": "case-board-labels",
+      "feature_ids": [
+        "board-labels"
+      ],
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "status": "pass",
+      "evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "result": {
+        "path": "results/board-labels.json",
+        "sha256": "30da6f1669fa20866b01f3ac9003da7e6a046724052de6ecb0093e73fcddc12b"
+      }
+    },
+    {
+      "id": "case-opening-turn",
+      "feature_ids": [
+        "opening-turn"
+      ],
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "status": "pass",
+      "evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "result": {
+        "path": "results/opening-turn.json",
+        "sha256": "3ec241e018c76da64d7acd694216faa3a3aab15a2de17a154c023823c2e67c59"
+      }
+    }
+  ],
+  "features": [
+    {
+      "id": "board-3d",
+      "status": "mismatch",
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "candidate_evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "case_ids": [
+        "case-board-3d"
+      ],
+      "baseline_origin": "original_design",
+      "deviation": null
+    },
+    {
+      "id": "board-styles",
+      "status": "mismatch",
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "candidate_evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "case_ids": [
+        "case-board-styles"
+      ],
+      "baseline_origin": "original_design",
+      "deviation": null
+    },
+    {
+      "id": "camera-gestures",
+      "status": "unknown",
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "candidate_evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "case_ids": [
+        "case-camera-gestures"
+      ],
+      "baseline_origin": "not_applicable",
+      "deviation": null
+    },
+    {
+      "id": "variants",
+      "status": "mismatch",
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "candidate_evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "case_ids": [
+        "case-variants"
+      ],
+      "baseline_origin": "not_applicable",
+      "deviation": null
+    },
+    {
+      "id": "local-hint-undo",
+      "status": "mismatch",
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "candidate_evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "case_ids": [
+        "case-local-hint-undo"
+      ],
+      "baseline_origin": "not_applicable",
+      "deviation": null
+    },
+    {
+      "id": "local-modes",
+      "status": "match",
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "candidate_evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "case_ids": [
+        "case-local-modes"
+      ],
+      "baseline_origin": "not_applicable",
+      "deviation": null
+    },
+    {
+      "id": "game-center",
+      "status": "mismatch",
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "candidate_evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "case_ids": [
+        "case-game-center"
+      ],
+      "baseline_origin": "not_applicable",
+      "deviation": null
+    },
+    {
+      "id": "speech-controls",
+      "status": "mismatch",
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "candidate_evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "case_ids": [
+        "case-speech-controls"
+      ],
+      "baseline_origin": "not_applicable",
+      "deviation": null
+    },
+    {
+      "id": "speech-output",
+      "status": "unknown",
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "candidate_evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "case_ids": [
+        "case-speech-output"
+      ],
+      "baseline_origin": "not_applicable",
+      "deviation": null
+    },
+    {
+      "id": "target-files-pgn",
+      "status": "unknown",
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "candidate_evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "case_ids": [
+        "case-target-files-pgn"
+      ],
+      "baseline_origin": "not_applicable",
+      "deviation": null
+    },
+    {
+      "id": "native-document-commands",
+      "status": "mismatch",
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "candidate_evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "case_ids": [
+        "case-native-document-commands"
+      ],
+      "baseline_origin": "not_applicable",
+      "deviation": null
+    },
+    {
+      "id": "computer-strength",
+      "status": "unknown",
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "candidate_evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "case_ids": [
+        "case-computer-strength"
+      ],
+      "baseline_origin": "not_applicable",
+      "deviation": null
+    },
+    {
+      "id": "native-platform",
+      "status": "match",
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "candidate_evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "case_ids": [
+        "case-native-platform"
+      ],
+      "baseline_origin": "not_applicable",
+      "deviation": null
+    },
+    {
+      "id": "board-labels",
+      "status": "match",
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "candidate_evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "case_ids": [
+        "case-board-labels"
+      ],
+      "baseline_origin": "not_applicable",
+      "deviation": null
+    },
+    {
+      "id": "opening-turn",
+      "status": "match",
+      "candidate_id": "quiet-knight-6f012bd249b2",
+      "candidate_evidence": [
+        {
+          "path": "evidence/candidate.md",
+          "sha256": "f3f343cf8ebbeae3d7cb8b47cee1aa8b95f84e29e9efc0adde289f9eae87103d"
+        }
+      ],
+      "case_ids": [
+        "case-opening-turn"
+      ],
+      "baseline_origin": "not_applicable",
+      "deviation": null
+    }
+  ]
+}
