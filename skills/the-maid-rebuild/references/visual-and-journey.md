@@ -10,7 +10,7 @@ Freeze expected journeys and visual baselines before running the candidate. A pe
 
 ## Capture repeatably
 
-Record browser/version, operating system, viewport, device scale factor, color scheme, locale, timezone, fonts, and data seed. Use local, stable assets where permitted. Wait for the declared ready state and fonts; disable transitions/animations and hide the caret. Freeze clocks or exclude dynamic regions explicitly. Record storage initialization and whether reloads reuse the same browser context.
+Record browser/version, operating system, CSS viewport, device scale factor (DPR), color scheme, locale, timezone, fonts, and data seed. A screenshot containing browser chrome or unknown viewport/DPR does not support a comparable numerical fidelity claim. Use local, stable assets where permitted. Wait for the declared ready state and fonts; disable transitions/animations and hide the caret. Freeze clocks or exclude dynamic regions explicitly. Record storage initialization and whether reloads reuse the same browser context.
 
 Use the same conditions for reference and candidate. Font rasterization and browser/OS differences can change pixels despite equivalent behavior. A changed environment requires investigation, not a quietly enlarged tolerance. The tools compare RGB pixels, not perceptual similarity or accessibility.
 
@@ -50,3 +50,9 @@ Apply the locked objective in [fidelity](fidelity.md). Approval of an attractive
 Run native deliverables in their actual native runtime, including launch/relaunch, complete board or content visibility, menus, focus, keyboard actions, dialogs and file panels. Browser testing can complement this evidence but cannot substitute for it. If file compatibility is requested, exchange actual files in both directions and inspect reopened state and failure behavior. Freeze the target-derived expected outcomes before those candidate trials.
 
 Report regression results separately from target matches, dimension coverage and unresolved surfaces. A negative visual control proves detection of that particular fault within the declared budgets. It does not prove exhaustive fidelity.
+
+## Measured specifications for authors
+
+Replace approximate appearance prose with approved measurements: element rectangles, spacing, sidebar/composer dimensions, font size/weight/line height, colors, borders, radii, menu placement, overflow and responsive transitions. Link every measurement to a state and evidence locator. Provide independently authored wireframes and approved measurements without copying restricted screenshots, artwork or fonts into the packet. Original assets can preserve geometry and visual roles; they do not establish exact asset agreement.
+
+Keep layout, typography, imagery and interaction findings separate. Capture both sides at the same declared ready state under matched CSS viewport, DPR, browser/version, color scheme and locale. Freeze tolerance rationale before candidate execution; incompatible captures remain historical evidence with a non-comparable disposition. Do not convert a zero-budget difference between unlike captures into an accuracy score. The readiness gate checks declared conditions and coverage; existing pixel comparison checks bytes, not the authenticity or quality of capture.

@@ -84,3 +84,7 @@ Normal JSON gate output has exact top-level fields `format_version`, `stage`, `o
 Exit **0** means the selected gate passed, **1** means well-formed records with blocked evidence/readiness, and **2** means invalid shape, paths, hashes or usage. Expected input errors produce no traceback. Argparse usage errors print ordinary CLI help to stderr. All output is stdout/stderr; the validator never writes to the project.
 
 Stable issue categories include `SHAPE`, `ID`, `TEXT`, `ENUM`, `INTEGER`, `BOOLEAN`, `COLLECTION`, `DUPLICATE_ID`, `DUPLICATE_REFERENCE`, `UNKNOWN_REFERENCE`, `DUPLICATE_KEY`, `INVALID_JSON`, `NONFINITE_JSON`, `JSON_DEPTH`, `UNSAFE_PATH`, `SYMLINK`, `NOT_REGULAR`, `FILE_SIZE`, `TOTAL_SIZE`, `FILE_LIMIT`, `HASH_MISMATCH`, `PACKET_FILE_SET`, `MANIFEST_MISMATCH`, `CANDIDATE_MISMATCH`, `EMPTY_SCOPE`, `HANDOFF_APPROVAL`, `CASE_PERMISSION`, `PASS_REVIEW`, `ORACLE_MISMATCH`, `REQUIRED_TRIAL`, `NO_REQUIRED_CASES`, and `OPEN_BLOCKER`. Messages provide context; integrations should branch on code and exit status.
+
+## Slice-readiness records
+
+The additional two-file readiness contract has its own [exact format reference](readiness-record-format.md). It leaves the existing version 1 project/run shapes unchanged and is checked by `readiness.py`, separately from acceptance and fidelity.

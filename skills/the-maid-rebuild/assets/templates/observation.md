@@ -12,3 +12,14 @@
 - Proposed case ID: [link into project.json]
 
 Record forbidden or unknown sources as such. Do not substitute a permission guess for a review. Keep raw observation material outside the approved packet unless separately approved.
+
+## Canonical requirement distilled from this observation
+
+- Target ID / requirement ID / surface / state:
+- Preconditions and action:
+- Exact visible strings and enabled/disabled control states:
+- Navigation result, persisted effect, error/recovery outcome:
+- Explicit not-applicable fields and rationale:
+- Source IDs, evidence locator, confidence, acceptance IDs:
+- Approved packet field/path and evaluator assertion:
+- Conflicts to reconcile and separate review disposition:

@@ -26,3 +26,15 @@ Use [fidelity](fidelity.md) for the separate contract/evaluation records. Assess
 For each dimension report counts of matched, mismatched, unknown and authorized-deviation features with explicit denominators. Keep criticality visible; removing optional or unobserved features from the denominator inflates coverage. Do not combine these dimensions into an unsupported “100%” score. A qualified user-authorized result with deviations is not a full match.
 
 Changing scope or expected outcomes needs the recorded user decision or new target evidence, fresh review and a new frozen contract; retain historical runs. A repair closes a specific gap only after the unchanged target-derived assertion and affected native/file journeys are independently rerun.
+
+## Repair is the next state
+
+After a failed fidelity run, create a gap queue recording cause (`specification`, `implementation`, `oracle`, `capture`, `access` or `dependency`), owner, minimal reproduction, affected requirement IDs, acceptance condition and next action. These richer fields belong in recovery notes; the existing `project.json` gap shape remains unchanged. Repair specified, accessible defects first. Preserve the evaluated candidate and its run; create a new candidate identity for the repaired bytes. Keep old failures visible and use an independent rerun of unchanged assertions plus affected regressions before closing a gap. Never lower a tolerance or rewrite expected behavior merely because the candidate failed.
+
+A newly discovered target fact requires reconciliation, independent review and a new contract identity. End with an incomplete blocked checkpoint only when a concrete access or dependency decision prevents meaningful progress; identify the decision and the next reproducible step. Local tools bind supplied records, not immutable application bytes or agent scheduling.
+
+## Paired generation journeys
+
+Use frozen original synthetic tasks on both target and candidate: a small website with navigation and downloadable source, a structured document or presentation with reopened exports, bounded research with source checks, context inheritance, attachment handling, follow-up edits, cancellation/retry and relaunch, as applicable. Record identical task constraints, environment and permitted side effects; do not broaden account access to obtain evidence.
+
+For variable AI output, freeze a quality rubric before execution instead of requiring exact prose equality. Record required content/structure, navigation or export validity, factual/source correctness, edit preservation and recovery outcomes, plus reviewer decisions and evidence. Exact output checks remain suitable for deterministic states and file properties. A passing text-file task cannot establish website, slides, research, browser or media capability.

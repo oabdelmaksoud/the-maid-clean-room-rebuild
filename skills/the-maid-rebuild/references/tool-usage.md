@@ -21,3 +21,7 @@ File paths are relative to the project; references to symlinks, non-regular file
 ## Browser capture is a separate step
 
 The core tools need no browser, REA, Replica, Pillow, or network access. A browser runner produces evidence first; validation then reads that evidence offline. The optional Pocket Tasks example uses Playwright and Pillow for browser captures and PNG-to-PPM conversion. Those are example dependencies, not skill dependencies. See [visual and journey validation](visual-and-journey.md) for capture discipline and `examples/pocket-tasks/README.md` in the full repository for executable commands. The standalone skill archive does not include the example.
+
+## Slice-readiness supplement
+
+`python3 scripts/readiness.py PROJECT_DIR --json` reads `readiness-contract.json` and `readiness.json` without requiring `project.json`. It is an additional gate before new faithful-slice implementation; it does not replace handoff, acceptance or fidelity checks. It supports a ready requested slice within a provisional full-scope record. Review [implementation readiness](implementation-readiness.md) and [its exact record format](readiness-record-format.md) before claiming readiness. Exit codes remain 0/1/2. Existing bounded examples remain compatible.

@@ -47,3 +47,9 @@ python3 skills/the-maid-rebuild/scripts/fidelity.py PROJECT_DIR --json
 ```
 
 The CLI reads the explicit `fidelity-contract.json` and `fidelity.json` in that project directory without requiring `project.json`. Exit `0` means the recorded fidelity gate passed, `1` means well-formed evidence is blocked or fails, and `2` means invalid records or integrity/invocation errors. These remain local record checks; they do not observe the target, launch the candidate, prove authenticity or grant publication permission.
+
+## Normalize requirement units
+
+Keep URLs and documents in a source ledger, then derive atomic observable features. Map many sources to one behavior and one behavior to multiple state/dimension cases. A new documentation URL is not automatically a new critical feature. Keep broad unknown surfaces as discovery obligations, separate from executable acceptance cases; assign criticality by workflow impact. Have the inventory reviewed for overlaps and omissions. When normalizing an earlier contract, preserve its results and an old-to-new requirement mapping; do not remove historical failures to improve counts.
+
+Report observed coverage, capability availability, behavioral agreement, visual agreement, output quality and unresolved evidence separately. Plan identity/session, orchestration/cancellation, browser/computer execution, context/uploads, artifact viewers/editing/export, automation, connectors, sharing and generation services when the requested target needs them. Record dependencies, authorized access, infrastructure, cost and source constraints. Independently chosen architecture must demonstrate target-relative behavior rather than substitute an easier product. No workflow tool supplies unobserved service behavior or promises near-100-percent whole-product equivalence.

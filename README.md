@@ -5,9 +5,9 @@
 **Observe the behavior. Write an original implementation. Bring the proof.**
 
 A practical agent skill for turning permitted research into a reviewed contract,
-a fresh implementation, and reproducible acceptance evidence.
+a ready implementation slice, and reproducible acceptance evidence.
 
-<img alt="Python 3.11 or later" src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=flat-square"> <img alt="MIT license" src="https://img.shields.io/badge/License-MIT-507D64?style=flat-square"> <img alt="Version 0.3.1" src="https://img.shields.io/badge/Version-0.3.1-725AC1?style=flat-square">
+<img alt="Python 3.11 or later" src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=flat-square"> <img alt="MIT license" src="https://img.shields.io/badge/License-MIT-507D64?style=flat-square"> <img alt="Version 0.4.0" src="https://img.shields.io/badge/Version-0.4.0-725AC1?style=flat-square">
 
 [The method](#the-method) · [Quick start](#quick-start) · [Try it](#try-it) · [Evidence](#evidence-so-far) · [Reference](#reference)
 
@@ -26,7 +26,8 @@ Bring your own product, stack, and authorized access. The kit supplies the metho
 ```mermaid
 flowchart LR
     A["Observe<br/>Permitted behavior + unknowns"] --> B["Reviewed packet<br/>Contract + provenance + hashes"]
-    B --> C["Fresh implementation<br/>Original code from the packet"]
+    B --> R["Slice readiness<br/>Requirements + capabilities + review"]
+    R --> C["Fresh implementation<br/>Original code from the packet"]
     C --> D["Independent checks<br/>Explicit run + candidate"]
     D --> E["Report<br/>Bounded results + remaining gaps"]
     D -->|Failures| F["Prioritize repair"]
@@ -39,6 +40,8 @@ flowchart LR
 | Scoped observations, source-use decisions, unknowns, and exclusions. | An original implementation contract, reviewed packet, hashes, and exposure records. | Explicit acceptance evidence, open gaps, and prioritized repair work. |
 
 Lock the requested objective as faithful reimplementation, user-authorized original redesign, or explicitly bounded workflow. Inventory all requested surfaces before handoff and keep intent review separate from packet review. Unknown evidence blocks the relevant fidelity claim; it does not grant permission to reduce scope.
+
+Before starting implementation, distinguish an approved packet, a ready slice and full requested scope. A ready backend slice can proceed while unrelated visual discovery is blocked; unresolved whole-product scope stays visible.
 
 Choose one mode per task. Keep research, implementation, and review in separate contexts where required, and disclose prior exposure. The skill guides that work; it does not execute target access or create an isolation boundary.
 
@@ -155,6 +158,38 @@ python3 examples/chess-fidelity/run_trial.py --output ../chess-fidelity-trial
 
 The trial succeeds only when the fidelity gate rejects the known gaps and its negative controls return the expected failures. The standalone fidelity command returns exit `1` for this chess candidate.
 
+## Ready to build, one slice at a time
+
+Before implementing a new faithful slice, copy the [blocked readiness starter](skills/the-maid-rebuild/assets/templates/readiness-starter) and follow the [guide](skills/the-maid-rebuild/references/implementation-readiness.md). Freeze `readiness-contract.json`, bind it from `readiness.json`, and select explicit requested slice IDs:
+
+```sh
+python3 skills/the-maid-rebuild/scripts/readiness.py PROJECT_DIR --json
+```
+
+The gate checks canonical requirements against a hashed author packet, applicable slice coverage, recorded review, declared capabilities, comparable capture conditions and matching target IDs in dispatch/resume records. It rejects a ready claim with unavailable required dependencies or conflicting states. A provisional record can pass for ready selected slices while preserving required blocked scope. That pass means those local records meet the slice gate; it does not establish a complete product.
+
+After a failure, preserve the old candidate and evidence, repair accessible gaps, then independently rerun unchanged requirements against a new candidate. Closure checks recorded candidate/reviewer identity and a hashed rerun; real execution and review still supply the proof. The starter records are intentionally unresolved. Existing bounded examples continue to work without readiness migration.
+
+Run the original synthetic record trial to see a conflicting packet rejected, a corrected slice accepted, independent backend work accepted provisionally, and a false full-scope readiness claim rejected:
+
+```sh
+python3 examples/manus-readiness/run_trial.py --output ../manus-readiness-trial
+```
+
+Choose a new output directory; the runner retains fixture records and `results.json` there. This trial uses synthetic records inspired by the Manus findings; it neither accesses nor evaluates Manus.
+
+```text
+$the-maid-rebuild Prepare a ready implementation slice from permitted evidence. Reconcile the canonical requirements with the author packet, plan real capabilities, freeze measured visual specifications where applicable, and run the readiness gate. Keep the full requested scope and blocked discovery visible.
+```
+
+## What the Manus trial taught us
+
+The Manus trial caught more gaps than it prevented. Approximate layout prose, conflicting profile labels and a packet approved only for known behavior let implementation start before the relevant states and capabilities were ready. A working file-producing agent did not establish the target's browser, generation or cloud workflows. The final assessment retained known UI mismatches.
+
+Its **4 matched / 22 mismatched / 28 unknown** obligations are a historical contract count, not an accuracy percentage. That contract mixed source documents, broad unknown surfaces and visual cases. Version 0.4.0 adds a slice-readiness record gate and sharpens the workflow: reconcile author/evaluator requirements, measure layouts, match capture conditions, plan each real capability and keep failed runs in a repair loop. Inventory normalization and broader paired task rubrics still require review and actual execution; the tools do not observe products or supply missing services.
+
+No Manus screenshots, source or assets are bundled. The trial's local findings guide the method; they do not establish that Manus has been rebuilt or that full product equivalence is attainable through a skill alone.
+
 ## Evidence so far
 
 | Observed check | Result and boundary |
@@ -176,6 +211,7 @@ Start a real project with the [templates](skills/the-maid-rebuild/assets/templat
 |---|---|
 | [Method](docs/method.md) | Research, handoff, implementation, and review boundaries. |
 | [Fidelity](skills/the-maid-rebuild/references/fidelity.md) | Original request, inventory, paired runtime evidence and dimensional coverage. |
+| [Implementation readiness](skills/the-maid-rebuild/references/implementation-readiness.md) | Slice gates, canonical requirements, capability plans and target continuity. |
 | [Record format](skills/the-maid-rebuild/references/record-format.md) | Exact fields in the bespoke versioned JSON records. |
 | [Visual and journey validation](skills/the-maid-rebuild/references/visual-and-journey.md) | Frozen visual baselines, ordered state assertions, capture conditions, and limitations. |
 | [Quality gates](docs/quality-gates.md) | What each check can support. |
@@ -219,8 +255,8 @@ python3 tools/build_release.py --output ../behavior-rebuild-release
 
 The builder checks the tree against `release-files.txt`, then creates:
 
-- `behavior-rebuild-kit-0.3.1.zip` — repository resources.
-- `behavior-rebuild-skill-0.3.1.zip` — the self-contained `the-maid-rebuild/` folder.
+- `behavior-rebuild-kit-0.4.0.zip` — repository resources.
+- `behavior-rebuild-skill-0.4.0.zip` — the self-contained `the-maid-rebuild/` folder.
 - `SHA256SUMS` — archive byte identities.
 
 Choose a different destination if it already exists. Adding or removing a release file requires updating the inventory. Archives, hashes, and local preparation do not publish anything or constitute publication approval.

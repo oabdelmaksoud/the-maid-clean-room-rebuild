@@ -19,6 +19,7 @@ jobs:
       - run: python examples/delimited-notebook/run_demo.py --output "${{ runner.temp }}/behavior-demo"
       - run: python skills/the-maid-rebuild/scripts/validate.py "${{ runner.temp }}/behavior-demo" --stage acceptance --run runs/demo.json --candidate demo-v1 --json
       - run: python examples/chess-fidelity/run_trial.py --output "${{ runner.temp }}/chess-fidelity"
+      - run: python examples/manus-readiness/run_trial.py --output "${{ runner.temp }}/manus-readiness"
       - run: python tools/build_release.py --output "${{ runner.temp }}/behavior-release"
   browser-trial:
     runs-on: ubuntu-latest

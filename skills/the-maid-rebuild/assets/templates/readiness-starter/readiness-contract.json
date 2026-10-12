@@ -1,0 +1,136 @@
+{
+  "format_version": 1,
+  "target_id": "sample-product",
+  "target_version": "unresolved",
+  "sources": [
+    {
+      "id": "login-source",
+      "evidence": [
+        {
+          "path": "synthetic-observation.txt",
+          "sha256": "16095863496734bd1fc8e8fc4482f88e7d67b50a0b98e0aa01e743dfbd8428aa"
+        }
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "id": "empty-continue",
+      "kind": "visual",
+      "surface": "login",
+      "state": "empty",
+      "precondition": "Email is empty",
+      "action": "View login",
+      "controls": [
+        "continue"
+      ],
+      "expected": {
+        "visible_strings": [
+          "Continue"
+        ],
+        "control_states": {
+          "continue": "disabled"
+        },
+        "navigation": "",
+        "persisted_effect": {},
+        "error_recovery": {
+          "empty_input": "stay"
+        }
+      },
+      "source_ids": [
+        "login-source"
+      ],
+      "evidence": [
+        {
+          "path": "synthetic-observation.txt",
+          "sha256": "16095863496734bd1fc8e8fc4482f88e7d67b50a0b98e0aa01e743dfbd8428aa"
+        }
+      ],
+      "confidence": "unknown",
+      "acceptance_ids": [
+        "empty-login-case"
+      ],
+      "slice_ids": [
+        "login-visual"
+      ],
+      "packet_id": "login-packet"
+    }
+  ],
+  "slices": [
+    {
+      "id": "login-visual",
+      "kind": "visual",
+      "required": true,
+      "requirement_ids": [
+        "empty-continue"
+      ],
+      "capability_ids": [
+        "identity"
+      ],
+      "capture": {
+        "browser": "synthetic-browser",
+        "browser_version": "1",
+        "os": "synthetic-os",
+        "css_viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "dpr": 1,
+        "fonts": [
+          "Synthetic Sans"
+        ],
+        "theme": "dark",
+        "locale": "en-US",
+        "state": "empty-login"
+      }
+    }
+  ],
+  "acceptance_cases": [
+    {
+      "id": "empty-login-case",
+      "requirement_ids": [
+        "empty-continue"
+      ],
+      "expected": {
+        "empty-continue": {
+          "visible_strings": [
+            "Continue"
+          ],
+          "control_states": {
+            "continue": "disabled"
+          },
+          "navigation": "",
+          "persisted_effect": {},
+          "error_recovery": {
+            "empty_input": "stay"
+          }
+        }
+      },
+      "steps": [
+        "View empty login; assert disabled Continue"
+      ],
+      "evidence": [
+        {
+          "path": "synthetic-observation.txt",
+          "sha256": "16095863496734bd1fc8e8fc4482f88e7d67b50a0b98e0aa01e743dfbd8428aa"
+        }
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "identity",
+      "description": "Synthetic identity service"
+    }
+  ],
+  "inventory_review": {
+    "approved": false,
+    "reviewer": "",
+    "evidence": [
+      {
+        "path": "synthetic-observation.txt",
+        "sha256": "16095863496734bd1fc8e8fc4482f88e7d67b50a0b98e0aa01e743dfbd8428aa"
+      }
+    ]
+  }
+}

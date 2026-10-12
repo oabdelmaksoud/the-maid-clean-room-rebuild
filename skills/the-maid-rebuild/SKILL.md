@@ -29,6 +29,8 @@ REA is an optional discovery aid only, when its proposed observations fit the pe
 
 Read [command contracts](references/command-contracts.md) and [handoff boundaries](references/handoff-boundaries.md). Distill approved evidence into behavior contracts and independently chosen command/state contracts. Record what each researcher, implementer, and reviewer has already seen; do not claim fresh isolation for a context exposed to broader material.
 
+Before implementing a new faithful slice, read [implementation readiness](references/implementation-readiness.md), prepare its canonical requirements and run the local readiness gate. An approved packet alone is provisional development approval, not slice readiness or full-scope discovery. Keep the full requested inventory and unresolved surfaces visible; a ready backend slice may proceed while unrelated visual discovery is blocked.
+
 Have a separate reviewer evaluate the packet. Confirm that the separately recorded intent and completeness reviews still cover the requested objective; packet approval alone cannot authorize a different product or reduced scope. Give the implementer only the approved packet and permitted original assets in a fresh context when separation is required. Freeze the file list and hashes; retain exclusions and unresolved questions outside the implementation packet. Hash agreement establishes file identity, not permission or independence.
 
 ## Verify/recover
@@ -39,10 +41,12 @@ For UI work, read [visual and journey validation](references/visual-and-journey.
 
 For faithful rebuild acceptance, complete the fidelity records and run `python3 scripts/fidelity.py PROJECT_DIR --json` from this skill directory in addition to the existing contract checks. Report implementation quality, regression stability and target fidelity separately. Keep every frozen feature in the denominator; authorized deviations are qualified outcomes, never exact matches. A contract acceptance pass alone does not complete a faithful rebuild.
 
+A failed fidelity run returns to repair by default. Freeze that evaluated candidate, preserve its failures, and give the repair a new candidate identity. Rerun unchanged target-derived cases and affected regressions independently; new evidence needs a newly reviewed contract. Close fixable accessible gaps before ending. A concrete access or dependency blocker may justify an incomplete checkpoint, never completion.
+
 Report required failures, blocked cases, unknowns, and exclusions explicitly. Rank repair work by user harm and workflow exposure, then evidence strength and effort. Reproduce a failure, repair it within assigned ownership, and obtain an independent rerun/review before closing its gap.
 
 ## Resume and scope
 
-Read the project's status and task-ownership records before resuming. Confirm the exact target/version/path, original request, locked objective, current workspace/revision, owned files, latest accepted evidence, open gaps, and next action. Do not silently switch the target or deliverable after compaction. Preserve concurrent work. At a checkpoint, record completed work, exact checks and results, blockers, and the next reproducible step using the session/task templates.
+Read the project's status and task-ownership records before resuming. Bind dispatch and resume to the same explicit target ID, readiness slice, packet and task ownership; task names and progress messages must name that target. Retire unrelated target work visibly. Confirm the exact target/version/path, original request, locked objective, current workspace/revision, owned files, latest accepted evidence, open gaps, and next action. Do not silently switch the target or deliverable after compaction. Preserve concurrent work. At a checkpoint, record completed work, exact checks and results, blockers, and the next reproducible step using the session/task templates.
 
 The skill grants no authority to access accounts, run target probes, install dependencies globally, send messages, publish, or push. Follow the user's existing authorization for those actions. The validators operate on local records and do not run the target or make network requests.

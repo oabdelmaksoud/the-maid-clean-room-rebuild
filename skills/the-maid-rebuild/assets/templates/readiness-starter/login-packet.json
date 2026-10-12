@@ -1,0 +1,21 @@
+{
+  "target_id": "sample-product",
+  "requirement_ids": [
+    "empty-continue"
+  ],
+  "expected": {
+    "empty-continue": {
+      "visible_strings": [
+        "Continue"
+      ],
+      "control_states": {
+        "continue": "disabled"
+      },
+      "navigation": "",
+      "persisted_effect": {},
+      "error_recovery": {
+        "empty_input": "stay"
+      }
+    }
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "format_version": 1,
+  "contract": {
+    "path": "readiness-contract.json",
+    "sha256": "0639a449c8f2abd15e325b7eafdc0ec0951060a3f95e0fdbc7f90b97001c79dc"
+  },
+  "target_id": "sample-product",
+  "target_version": "unresolved",
+  "candidate_id": "candidate-one",
+  "requested_slice_ids": [
+    "login-visual"
+  ],
+  "status": "blocked",
+  "full_scope_readiness_claim": false,
+  "packets": [
+    {
+      "id": "login-packet",
+      "target_id": "sample-product",
+      "approved": false,
+      "reviewer": "",
+      "requirement_ids": [
+        "empty-continue"
+      ],
+      "expected": {
+        "empty-continue": {
+          "visible_strings": [
+            "Continue"
+          ],
+          "control_states": {
+            "continue": "disabled"
+          },
+          "navigation": "",
+          "persisted_effect": {},
+          "error_recovery": {
+            "empty_input": "stay"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "synthetic-observation.txt",
+          "sha256": "16095863496734bd1fc8e8fc4482f88e7d67b50a0b98e0aa01e743dfbd8428aa"
+        }
+      ],
+      "artifact": {
+        "path": "login-packet.json",
+        "sha256": "b948c9c59c18b052aeb8e62d04915402e1ee2f3fa56cb1ef7a01e5866b6702ee"
+      }
+    }
+  ],
+  "slices": [
+    {
+      "id": "login-visual",
+      "status": "blocked",
+      "requirements": [
+        {
+          "id": "empty-continue",
+          "status": "blocked",
+          "reason": "Synthetic placeholder; actual target state unknown",
+          "evidence": [
+            {
+              "path": "synthetic-observation.txt",
+              "sha256": "16095863496734bd1fc8e8fc4482f88e7d67b50a0b98e0aa01e743dfbd8428aa"
+            }
+          ]
+        }
+      ],
+      "capture": null,
+      "blocker": {
+        "owner": "observer",
+        "reason": "Replace synthetic fields with permitted target evidence and independent review",
+        "next_action": "Observe the selected slice and reconcile approved canonical facts",
+        "evidence": [
+          {
+            "path": "synthetic-observation.txt",
+            "sha256": "16095863496734bd1fc8e8fc4482f88e7d67b50a0b98e0aa01e743dfbd8428aa"
+          }
+        ]
+      },
+      "review": {
+        "approved": false,
+        "reviewer": "",
+        "evidence": [
+          {
+            "path": "synthetic-observation.txt",
+            "sha256": "16095863496734bd1fc8e8fc4482f88e7d67b50a0b98e0aa01e743dfbd8428aa"
+          }
+        ]
+      }
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "identity",
+      "availability": "available",
+      "disposition": "",
+      "evidence": [
+        {
+          "path": "synthetic-observation.txt",
+          "sha256": "16095863496734bd1fc8e8fc4482f88e7d67b50a0b98e0aa01e743dfbd8428aa"
+        }
+      ]
+    }
+  ],
+  "task": {
+    "target_id": "sample-product",
+    "name": "sample-product unresolved slice readiness",
+    "owner": "builder",
+    "evidence": [
+      {
+        "path": "synthetic-observation.txt",
+        "sha256": "16095863496734bd1fc8e8fc4482f88e7d67b50a0b98e0aa01e743dfbd8428aa"
+      }
+    ]
+  },
+  "resume": {
+    "target_id": "sample-product",
+    "name": "sample-product unresolved slice readiness",
+    "owner": "builder",
+    "evidence": [
+      {
+        "path": "synthetic-observation.txt",
+        "sha256": "16095863496734bd1fc8e8fc4482f88e7d67b50a0b98e0aa01e743dfbd8428aa"
+      }
+    ]
+  },
+  "gaps": []
+}

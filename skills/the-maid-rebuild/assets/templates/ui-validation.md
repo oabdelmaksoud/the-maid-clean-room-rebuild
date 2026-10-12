@@ -23,6 +23,13 @@ Complete this record before candidate execution. Unresolved fields remain blocke
 - Full capture paths and hashes:
 - Predeclared crop rectangle, if any, and rationale:
 
+## Approved measured specification
+
+| Requirement / state ID | Element | Rectangle / spacing | Typography | Color / border / radius | Responsive / overflow rule | Evidence locator / review |
+|---|---|---|---|---|---|---|
+
+Provide approved measurements and original wireframes to authors. Keep restricted captures in evaluator evidence. Compare layout, typography and imagery separately; original assets do not become exact asset matches. Unknown CSS viewport, DPR or ready state blocks comparable visual claims.
+
 ## Visual cases
 
 | Case ID | Checkpoint | Baseline path / SHA-256 | Width × height | Channel delta budget | Changed-pixel budget | Rationale |

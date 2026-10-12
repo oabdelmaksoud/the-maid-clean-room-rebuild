@@ -5,6 +5,8 @@
 | Records have the supported format | Strict versioned parser and reference checks | Whether the records are truthful and sufficiently scoped. |
 | Evidence bytes match references | Local SHA-256 checks and safe path reads | Evidence provenance, permission, and semantic relevance. |
 | Packet matches declared handoff | Exact file set, hashes, extensions, source references, exposure/reviewer fields | Reviewer must inspect content and the stated use basis. |
+| Requested slice has declared implementation readiness | Frozen canonical expected values, hashed author packet, coverage, declared dependency/capture status, approvals and target identity | Review semantic completeness, measured layout quality, actual capability and independent execution; provisional slices do not establish full scope. |
+| Repair closure has recorded support | New candidate ID, reviewer distinct from owner, hashed rerun with unchanged canonical expected/actual values | Reproduce the repair, preserve historical runs and verify the actual repaired application. |
 | Required outcomes have recorded support | Explicit run/candidate binding, trials, oracle/result and review checks | Reproduce the outcome and assess oracle independence. |
 | Recorded journey matches its contract | Ordered step/action/state comparison, including exact JSON types | A trusted browser recorder must actually perform actions and capture relevant state; offline records cannot authenticate execution. |
 | Captured appearance meets its budget | Recomputed RGB pixel differences against a hashed baseline with frozen dimensions and tolerances | Use stable rendering conditions and independently review the baseline; pixel agreement does not establish usability or functional correctness. |

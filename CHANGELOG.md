@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.0 — Implementation readiness
+
+- Add a portable local slice-readiness gate and intentionally blocked starter record; existing bounded examples retain their earlier claims without migration.
+- Connect canonical behavioral requirements, packet coverage, acceptance IDs, measured visual specifications, comparable capture conditions, capability plans and target-specific dispatch/resume records.
+- Distinguish provisional development approval, ready slices and full requested scope. Local record checks do not authenticate observations, review independence or real-world capability.
+- Apply Manus trial lessons to workflow guidance: normalize source ledgers into atomic features, use broad paired generation tasks with frozen rubrics, and return failed fidelity runs to repair with new candidate identities and retained history.
+- Keep REA optional, source/account authorization unchanged, and product-fidelity claims bounded. No target screenshots or assets are bundled.
+
 ## 0.3.1 — Skill invocation rename
 
 - Rename the canonical skill folder and invocation from `behavior-rebuild` / `$behavior-rebuild` to `the-maid-rebuild` / `$the-maid-rebuild`; the old command is replaced, not retained as an alias.
