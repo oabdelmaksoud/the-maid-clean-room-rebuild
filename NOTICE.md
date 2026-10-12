@@ -1,6 +1,6 @@
 # Authorship and inspiration
 
-Behavior Rebuild Kit is an independently authored methodology, skill, templates, and local validation tools. No Storytold source code, skill implementation, product assets, or research corpus is incorporated. The fictional Delimited Notebook example uses original synthetic material. The MIT license covers this project's original material; linked third-party material retains its own terms.
+The Maid - Clean Room Rebuild (formerly Behavior Rebuild Kit) is an independently authored methodology, skill, templates, and local validation tools. No Storytold source code, skill implementation, product assets, or research corpus is incorporated. The fictional Delimited Notebook example uses original synthetic material. The MIT license covers this project's original material; linked third-party material retains its own terms.
 
 Public Storytold repositories informed the following methodological ideas. References are pinned to the snapshots inspected on October 11, 2026:
 

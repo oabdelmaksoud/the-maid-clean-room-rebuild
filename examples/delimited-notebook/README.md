@@ -1,6 +1,6 @@
 # Delimited Notebook
 
-This fictional CSV workflow is original synthetic material for Behavior Rebuild Kit. It does not describe or compare a competitor. Its static `project.json` and `packet/` demonstrate a discovery/handoff record; executed acceptance evidence is generated separately.
+This fictional CSV workflow is original synthetic material for The Maid - Clean Room Rebuild (formerly Behavior Rebuild Kit). It does not describe or compare a competitor. Its static `project.json` and `packet/` demonstrate a discovery/handoff record; executed acceptance evidence is generated separately.
 
 The runner imports rows with the exact `item,amount` header, parses finite nonnegative amounts with at most two decimal places, calculates a decimal total, and exports the original rows with amounts formatted to two decimals. The valid fixture has three rows totaling **35.50**. The export preserves those three rows; it does not append a total row.
 

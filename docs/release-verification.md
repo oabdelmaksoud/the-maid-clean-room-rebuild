@@ -39,6 +39,6 @@ The owner subsequently authorized publication to a private GitHub repository. Th
 
 The initial revision `821c8568ce45d53dd0f3aa93138df68dfef3fa9b` was pushed to the private repository. Repository visibility was verified through the GitHub API. A fresh clone contained 45 byte-identical distributed files; the README installation command and 36-test suite passed from that clone.
 
-[GitHub Actions run 38187814468](https://github.com/oabdelmaksoud/behavior-rebuild-kit/actions/runs/38187814468) completed successfully for that revision. All six jobs passed: Linux, macOS, and Windows, each with Python 3.11 and 3.14. Each job passed the 36-test suite, generated the original demonstration, validated its explicit acceptance run and candidate, and built the release archives.
+[GitHub Actions run 38187814468](https://github.com/oabdelmaksoud/the-maid-clean-room-rebuild/actions/runs/38187814468) completed successfully for that revision. All six jobs passed: Linux, macOS, and Windows, each with Python 3.11 and 3.14. Each job passed the 36-test suite, generated the original demonstration, validated its explicit acceptance run and candidate, and built the release archives.
 
 These results apply to the initial revision identified above. This documentation follow-up was authored after that run; the earlier CI result does not establish validation of a later commit. No tagged GitHub release is asserted.
