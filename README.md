@@ -7,7 +7,7 @@
 A practical agent skill for turning permitted research into a reviewed contract,
 a ready implementation slice, and reproducible acceptance evidence.
 
-<img alt="Python 3.11 or later" src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=flat-square"> <img alt="MIT license" src="https://img.shields.io/badge/License-MIT-507D64?style=flat-square"> <img alt="Version 0.5.0" src="https://img.shields.io/badge/Version-0.5.0-725AC1?style=flat-square">
+<img alt="Python 3.11 or later" src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=flat-square"> <img alt="MIT license" src="https://img.shields.io/badge/License-MIT-507D64?style=flat-square"> <img alt="Version 0.6.0" src="https://img.shields.io/badge/Version-0.6.0-725AC1?style=flat-square">
 
 [The method](#the-method) · [Quick start](#quick-start) · [Try it](#try-it) · [Evidence](#evidence-so-far) · [Reference](#reference)
 
@@ -54,10 +54,10 @@ gh repo clone oabdelmaksoud/the-maid-clean-room-rebuild
 cd the-maid-clean-room-rebuild
 ```
 
-Copy the **complete skill folder** from the repository root. This standard-library command uses your configured `CODEX_HOME`, or defaults to `~/.codex`. It refuses to overwrite an existing installation and leaves the source folder unchanged.
+Copy the **complete command pack** from the repository root. It contains the shared core and all nine phase/full-workflow commands. This standard-library command uses your configured `CODEX_HOME`, or defaults to `~/.codex`. It refuses to overwrite an existing installation and leaves the source folder unchanged.
 
 ```sh
-python3 -c "import os, shutil; from pathlib import Path; source = Path('skills/the-maid-rebuild'); destination = Path(os.environ.get('CODEX_HOME') or Path.home() / '.codex') / 'skills' / 'the-maid-rebuild'; shutil.copytree(source, destination, ignore=shutil.ignore_patterns('__pycache__', '*.pyc')); print(destination)"
+python3 -c "import os, shutil; from pathlib import Path; source = Path('skills'); destination = Path(os.environ.get('CODEX_HOME') or Path.home() / '.codex') / 'skills'; folders = sorted(source.glob('the-maid-*'), key=lambda p: (p.name != 'the-maid-rebuild', p.name)); assert folders and (source / 'the-maid-rebuild' / 'SKILL.md').is_file(), 'Shared core missing'; assert all(not (destination / p.name).exists() and not (destination / p.name).is_symlink() for p in folders), 'Review and back up the existing Maid installation first'; destination.mkdir(parents=True, exist_ok=True); [shutil.copytree(p, destination / p.name, ignore=shutil.ignore_patterns('__pycache__', '*.pyc')) for p in folders]; print(destination)"
 ```
 
 On macOS, Linux, or Windows, use `python` instead if that is the name of your Python 3.11+ executable. Review an existing installation before replacing it. No plugin wrapper or package dependency is needed.
@@ -71,19 +71,25 @@ python3 -c "import os, shutil; from pathlib import Path; base = Path(os.environ.
 Start a fresh Codex turn after installation or migration so skill discovery loads the new identifier. No installed skills are changed by cloning, testing or building this repository.
 
 
-Start a new Codex turn, then choose a mode:
+## Pick a command
 
-```text
-$the-maid-rebuild Discover the permitted behavior of this workflow. Record evidence, exclusions, and unknowns.
-```
+These are separate Codex commands. Replace `[target]` with a product URL, installed app name, or project path; use a saved project/evidence directory for later phases.
 
-```text
-$the-maid-rebuild Prepare a handoff from this approved evidence. Freeze the packet and arrange separate review.
-```
+| Command | What it does |
+|---|---|
+| `$the-maid-discover [target]` | Inventory the product, workflows, states, sources and gaps. |
+| `$the-maid-rea [target]` | Use connected REA for permitted screenshot observation and a reviewed evidence handoff. |
+| `$the-maid-spec [project]` | Create canonical requirements, acceptance cases and the reviewed implementation packet. |
+| `$the-maid-ready [project]` | Check whether the requested implementation slices are ready. |
+| `$the-maid-build [project]` | Implement approved ready slices from the packet. |
+| `$the-maid-validate [project]` | Compare behavior, appearance, journeys and files; report fidelity gaps. |
+| `$the-maid-repair [project]` | Fix reproducible gaps and independently rerun the checks. |
+| `$the-maid-status [project]` | Read current progress, blockers and the next action without modifying the project. |
+| **`$the-maid-all [target]`** | **Run the full authorized workflow, including validation and repair.** |
 
-```text
-$the-maid-rebuild Verify/recover this implementation against its frozen contract. Report failures and rank repair work.
-```
+Each phase stops at its stated outcome. Validation does not silently rewrite the app; discovery does not start a build. `all` preserves the requested full scope, progresses through ready slices and retains explicit blockers when access or evidence prevents completion. REA is used when connected, useful and permitted; its absence does not broaden source access. None of these commands independently authorizes publishing, account changes or new installations.
+
+`$the-maid-rebuild` still accepts natural-language requests for compatibility. For the distinct command names, install the **whole command pack**, including their shared `the-maid-rebuild` folder. See the [mode guide](skills/the-maid-rebuild/references/commands.md).
 
 The [skill instructions](skills/the-maid-rebuild/SKILL.md) describe the full workflow. The [compatibility record](docs/compatibility.md) states observed host coverage.
 
@@ -275,8 +281,8 @@ python3 tools/build_release.py --output ../behavior-rebuild-release
 
 The builder checks the tree against `release-files.txt`, then creates:
 
-- `behavior-rebuild-kit-0.5.0.zip` — repository resources.
-- `behavior-rebuild-skill-0.5.0.zip` — the self-contained `the-maid-rebuild/` folder.
+- `behavior-rebuild-kit-0.6.0.zip` — repository resources.
+- `behavior-rebuild-skill-0.6.0.zip` — the shared `the-maid-rebuild/` folder and all phase/full-workflow command folders; install them together.
 - `SHA256SUMS` — archive byte identities.
 
 Choose a different destination if it already exists. Adding or removing a release file requires updating the inventory. Archives, hashes, and local preparation do not publish anything or constitute publication approval.

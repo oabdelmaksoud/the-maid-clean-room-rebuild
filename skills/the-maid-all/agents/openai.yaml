@@ -1,0 +1,4 @@
+interface:
+  display_name: "The Maid - All"
+  short_description: "Run the rebuild workflow through repair and validation"
+  default_prompt: "Use $the-maid-all to orchestrate the permitted rebuild workflow through discovery, specification, readiness, original implementation, validation, and repair."

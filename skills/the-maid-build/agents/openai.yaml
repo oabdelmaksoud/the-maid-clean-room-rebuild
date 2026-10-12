@@ -1,0 +1,4 @@
+interface:
+  display_name: "The Maid - Build"
+  short_description: "Implement ready slices from the approved packet"
+  default_prompt: "Use $the-maid-build to independently implement authorized ready slices using the approved packet and permitted original assets."

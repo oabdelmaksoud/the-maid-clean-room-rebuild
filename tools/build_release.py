@@ -2,6 +2,7 @@
 """Build deterministic release archives from the explicit reviewed file manifest."""
 import argparse
 import hashlib
+import json
 import re
 from pathlib import Path, PurePosixPath
 import zipfile
@@ -47,6 +48,49 @@ def selected_files(root):
     return sorted(entries)
 
 
+def portable_skill_files(root, entries):
+    """Select native command skills and enforce their shared-core dependency."""
+    skill_entries = [p for p in entries if len(p.split('/')) >= 3
+                     and p.split('/')[0] == 'skills'
+                     and p.split('/')[1].startswith('the-maid-')]
+    core = 'skills/the-maid-rebuild/SKILL.md'
+    if core not in skill_entries:
+        raise ValueError('portable skills require skills/the-maid-rebuild/SKILL.md')
+    names = {p.split('/')[1] for p in skill_entries}
+    for name in sorted(names):
+        entry = f'skills/{name}/SKILL.md'
+        if entry not in skill_entries:
+            raise ValueError(f'missing skill entrypoint: {entry}')
+        text = (root / entry).read_text(encoding='utf-8')
+        frontmatter = re.match(r'\A---\n(.*?)\n---(?:\n|$)', text, re.DOTALL)
+        if not frontmatter or not re.search(r'^name: ' + re.escape(name) + r'$', frontmatter[1], re.MULTILINE):
+            raise ValueError(f'skill frontmatter name must match folder: {name}')
+        if name != 'the-maid-rebuild':
+            for link in ('../the-maid-rebuild/SKILL.md', '../the-maid-rebuild/references/commands.md'):
+                if f']({link})' not in text:
+                    raise ValueError(f'missing relative core link in {name}: {link}')
+            if f'skills/{name}/agents/openai.yaml' not in skill_entries:
+                raise ValueError(f'missing native command UI metadata: {name}')
+    wrappers = names - {'the-maid-rebuild'}
+    if wrappers:
+        catalog_path = 'skills/the-maid-rebuild/references/commands.json'
+        if catalog_path not in skill_entries or 'skills/the-maid-rebuild/references/commands.md' not in skill_entries:
+            raise ValueError('native command wrappers require the shared command reference and catalog')
+        catalog = json.loads((root / catalog_path).read_text(encoding='utf-8'))
+        if not isinstance(catalog, dict) or catalog.get('schema_version') != 1 or catalog.get('core_skill') != 'the-maid-rebuild':
+            raise ValueError('invalid native command catalog')
+        commands = catalog.get('commands')
+        if not isinstance(commands, list) or not all(isinstance(c, dict) for c in commands):
+            raise ValueError('invalid native command catalog entries')
+        catalog_names = [c.get('skill') for c in commands]
+        if not all(isinstance(n, str) for n in catalog_names) or len(catalog_names) != len(set(catalog_names)) or set(catalog_names) != wrappers:
+            raise ValueError('native command catalog must match the selected wrappers')
+        for command in commands:
+            if command.get('skill') != 'the-maid-' + str(command.get('mode')):
+                raise ValueError('native command catalog mode must match its skill name')
+    return skill_entries
+
+
 def build(root, output):
     root = Path(root).resolve()
     output = Path(output).absolute()
@@ -56,10 +100,7 @@ def build(root, output):
     version = (root / 'VERSION').read_text(encoding='utf-8').strip()
     if len(version) > 32 or not re.fullmatch(r'(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)', version):
         raise ValueError('VERSION must be a stable semantic version: MAJOR.MINOR.PATCH without leading zeroes')
-    skill_prefix = 'skills/the-maid-rebuild/'
-    skill_entries = [p for p in entries if p.startswith(skill_prefix)]
-    if not skill_entries:
-        raise ValueError('no portable skill files selected')
+    skill_entries = portable_skill_files(root, entries)
     output.mkdir(parents=True)
     archives = [(f'behavior-rebuild-kit-{version}.zip', entries, ''),
                 (f'behavior-rebuild-skill-{version}.zip', skill_entries, 'skills/')]

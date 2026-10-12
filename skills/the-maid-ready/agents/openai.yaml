@@ -1,0 +1,4 @@
+interface:
+  display_name: "The Maid - Ready"
+  short_description: "Check readiness for selected implementation slices"
+  default_prompt: "Use $the-maid-ready to evaluate the local readiness gate for selected slices while preserving all remaining requested scope."

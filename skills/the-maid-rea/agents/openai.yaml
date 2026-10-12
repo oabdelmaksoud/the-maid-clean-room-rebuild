@@ -1,0 +1,4 @@
+interface:
+  display_name: "The Maid - REA"
+  short_description: "Capture permitted UI evidence with optional REA"
+  default_prompt: "Use $the-maid-rea to use optional REA for scoped permitted rendered UI evidence without broadening source access."

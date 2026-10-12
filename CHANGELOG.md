@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.6.0 — Separate command pack
+
+- Add distinct Codex commands for discovery, REA observation, specification, readiness, implementation, validation, repair, status and the full workflow.
+- Keep shared rules in the core skill; phase entrypoints preserve scoped stopping boundaries and the full workflow retains readiness, review and repair gates.
+- Preserve `$the-maid-rebuild` as the natural-language compatibility entrypoint.
+- Package the shared core and command folders together; commands are skill invocations rather than new terminal executables.
+
 ## 0.5.0 — REA discovery integration
 
 - Add supported optional REA screenshot discovery and a reviewed observation handoff gate; raw captures remain evaluator-only.

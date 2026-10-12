@@ -19,3 +19,7 @@ The offline validators require Python 3.11+ and only the standard library, inclu
 Validate a trusted, quiescent local copy: no other process should replace files or path components during inspection. The validator is not a sandbox against concurrent hostile filesystem mutation.
 
 A configured CI matrix states intended coverage. Only observed completed runs establish tested combinations. The [release verification record](release-verification.md) identifies the tested revision, commands, versions, results, and remaining limitations. Later documentation updates are not implicitly covered by an earlier CI run.
+
+## Command pack
+
+Version 0.6.0 adds nine native Codex skill entrypoints plus the existing shared core. Install all `skills/the-maid-*` folders together so sibling references resolve. Phase commands share the core; the archive builder rejects incomplete command packs. Structural metadata and packaging checks do not prove a particular client's autocomplete behavior. A fresh turn loads the newly installed identifiers. The recorded independent validation-phase trial preserved its fixture and did not repair or build.

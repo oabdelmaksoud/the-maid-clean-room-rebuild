@@ -7,7 +7,7 @@ description: Discover permitted product behavior, preserve requested fidelity, p
 
 Produce a traceable route from permitted evidence to an independently authored implementation contract and reproducible acceptance cases, including visual and user-journey evidence where relevant. Preserve the user's product scope and source restrictions. This method does not certify legal clearance, independence, or product parity.
 
-Choose the mode matching the requested work; do not run all modes automatically.
+Choose the mode matching the requested work; do not run all modes automatically. Read [command modes](references/commands.md) when a phase command or `all` is requested. The command pack provides `$the-maid-discover`, `$the-maid-rea`, `$the-maid-spec`, `$the-maid-ready`, `$the-maid-build`, `$the-maid-validate`, `$the-maid-repair`, `$the-maid-status`, and `$the-maid-all`. These are Codex skill invocations, not terminal executables. `$the-maid-rebuild` remains the natural-language compatibility entrypoint. Phase commands keep their stated stopping boundary; `all` explicitly coordinates the complete authorized workflow, including repair and independent reruns, without granting publication or additional source access.
 
 ## Lock the requested objective
 

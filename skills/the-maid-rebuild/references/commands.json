@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "core_skill": "the-maid-rebuild",
+  "commands": [
+    {
+      "skill": "the-maid-discover",
+      "mode": "discover",
+      "display_name": "The Maid - Discover"
+    },
+    {
+      "skill": "the-maid-rea",
+      "mode": "rea",
+      "display_name": "The Maid - REA"
+    },
+    {
+      "skill": "the-maid-spec",
+      "mode": "spec",
+      "display_name": "The Maid - Spec"
+    },
+    {
+      "skill": "the-maid-ready",
+      "mode": "ready",
+      "display_name": "The Maid - Ready"
+    },
+    {
+      "skill": "the-maid-build",
+      "mode": "build",
+      "display_name": "The Maid - Build"
+    },
+    {
+      "skill": "the-maid-validate",
+      "mode": "validate",
+      "display_name": "The Maid - Validate"
+    },
+    {
+      "skill": "the-maid-repair",
+      "mode": "repair",
+      "display_name": "The Maid - Repair"
+    },
+    {
+      "skill": "the-maid-status",
+      "mode": "status",
+      "display_name": "The Maid - Status"
+    },
+    {
+      "skill": "the-maid-all",
+      "mode": "all",
+      "display_name": "The Maid - All"
+    }
+  ]
+}

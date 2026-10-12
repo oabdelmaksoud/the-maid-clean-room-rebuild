@@ -1,0 +1,4 @@
+interface:
+  display_name: "The Maid - Validate"
+  short_description: "Evaluate frozen acceptance evidence without repairs"
+  default_prompt: "Use $the-maid-validate to evaluate candidate evidence against frozen acceptance expectations and report gaps without automatically repairing."

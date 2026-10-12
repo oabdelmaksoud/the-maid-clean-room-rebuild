@@ -1,0 +1,4 @@
+interface:
+  display_name: "The Maid - Repair"
+  short_description: "Repair recorded gaps and independently revalidate"
+  default_prompt: "Use $the-maid-repair to repair specified accessible gaps, preserve candidate history, and independently rerun unchanged acceptance cases."

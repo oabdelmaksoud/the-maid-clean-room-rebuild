@@ -1,0 +1,4 @@
+interface:
+  display_name: "The Maid - Status"
+  short_description: "Read target progress, evidence, gaps, and blockers"
+  default_prompt: "Use $the-maid-status to report the current target, scope, readiness, candidate evidence, open gaps, and next action read-only."

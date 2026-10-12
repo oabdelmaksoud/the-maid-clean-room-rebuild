@@ -1,0 +1,4 @@
+interface:
+  display_name: "The Maid - Spec"
+  short_description: "Freeze approved requirements and author packets"
+  default_prompt: "Use $the-maid-spec to prepare and review canonical behavior requirements, acceptance expectations, and the approved implementation packet."

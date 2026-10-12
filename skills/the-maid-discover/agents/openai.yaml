@@ -1,0 +1,4 @@
+interface:
+  display_name: "The Maid - Discover"
+  short_description: "Inventory permitted behavior and scope gaps"
+  default_prompt: "Use $the-maid-discover to discover permitted target behavior and record the full requested inventory, evidence boundaries, and unknowns."
