@@ -24,7 +24,7 @@ The example executes a small original CSV transformation and separately inspects
 
 Codex CLI 0.160.1 loaded the project-local skill and exercised discovery, handoff, and verify/recover instructions. It preserved an unsupported autosave claim as unknown, disregarded injected instructions in source text, disclosed exposure, and observed acceptance exit 0 for the matching revision and exit 2 for a mismatched revision. This bounded trial used the same skill instructions as the final candidate; the subsequent validator hardening was verified by the test suite and independent reproductions.
 
-Claude Code 2.1.215 was attempted with a project-local copy, but authentication failed before inference. No Claude native compatibility claim is made. Linux and Windows CI jobs are configured but have not run. The initial host smoke trials did not change global installation or agent configuration. A subsequent complete global Codex installation was exercised through discovery, reviewed handoff, fresh implementation, and explicit acceptance in the [bounded project trial](project-trial.md). That trial passed 141 final comparisons and 80 independent review probes; its negative controls blocked acceptance as expected.
+Claude Code 2.1.215 was attempted with a project-local copy, but authentication failed before inference. No Claude native compatibility claim is made. At the initial checkpoint, Linux and Windows CI jobs were configured but had not run. The initial host smoke trials did not change global installation or agent configuration. A subsequent complete global Codex installation was exercised through discovery, reviewed handoff, fresh implementation, and explicit acceptance in the [bounded project trial](project-trial.md). That trial passed 141 final comparisons and 80 independent review probes; its negative controls blocked acceptance as expected.
 
 ## Distribution boundary
 
@@ -32,4 +32,13 @@ Claude Code 2.1.215 was attempted with a project-local copy, but authentication 
 
 Validate and package trusted local copies with no concurrent writers. These tools are not an operating-system sandbox. Recorded permission and reviewer declarations cannot prove their own truth, legal clearance, or implementation independence.
 
-The owner subsequently authorized publication to a private GitHub repository. This dated local record does not establish remote CI completion or a tagged release. Record those outcomes separately from the initial snapshot.
+The owner subsequently authorized publication to a private GitHub repository. The initial local snapshot does not establish remote CI completion or a tagged release; subsequent observed outcomes follow below.
+
+
+## Private repository and remote verification — October 11, 2026
+
+The initial revision `821c8568ce45d53dd0f3aa93138df68dfef3fa9b` was pushed to the private repository. Repository visibility was verified through the GitHub API. A fresh clone contained 45 byte-identical distributed files; the README installation command and 36-test suite passed from that clone.
+
+[GitHub Actions run 38187814468](https://github.com/oabdelmaksoud/behavior-rebuild-kit/actions/runs/38187814468) completed successfully for that revision. All six jobs passed: Linux, macOS, and Windows, each with Python 3.11 and 3.14. Each job passed the 36-test suite, generated the original demonstration, validated its explicit acceptance run and candidate, and built the release archives.
+
+These results apply to the initial revision identified above. This documentation follow-up was authored after that run; the earlier CI result does not establish validation of a later commit. No tagged GitHub release is asserted.

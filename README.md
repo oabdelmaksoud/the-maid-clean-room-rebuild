@@ -88,6 +88,12 @@ Validate a trusted, quiescent local copy: another process must not replace files
 
 Hash checks establish file identity. They do not establish permission, truthful observation, or correct real-world outcomes. The [quality gate matrix](docs/quality-gates.md) explains what each check can support. Read the [method](docs/method.md) and [evidence boundary](docs/evidence-boundary.md) before applying the kit to a real product.
 
+## Verified checks
+
+- **36 tests passed on six CI combinations:** Linux, macOS, and Windows with Python 3.11 and 3.14. Every job also passed the demo, explicit acceptance gate, and release build. See the [completed CI run](https://github.com/oabdelmaksoud/behavior-rebuild-kit/actions/runs/38187814468) and [verification record](docs/release-verification.md) for the tested revision.
+- **Installed-skill project trial:** 141/141 final comparisons and 80/80 independent review probes passed within a bounded sorting contract; negative controls blocked acceptance. See [project trial](docs/project-trial.md).
+- **Native Codex:** bounded project-local and global installed trials completed. Claude native behavior remains unverified because authentication blocked its trial. See [compatibility](docs/compatibility.md).
+
 ## Development and release
 
 ```sh
