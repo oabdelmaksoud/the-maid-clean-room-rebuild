@@ -1,0 +1,25 @@
+{
+  "format_version": 1,
+  "project_id": "new-project",
+  "title": "New behavior study",
+  "scope": "Define the bounded behavior and explicit non-goals before discovery.",
+  "target": {
+    "name": "Unselected target",
+    "version": "Unrecorded",
+    "mode": "discovery"
+  },
+  "sources": [],
+  "commands": [],
+  "cases": [],
+  "exclusions": [],
+  "exclusion_note": "No exclusions have been approved.",
+  "handoff": {
+    "directory": "packet",
+    "files": [],
+    "reviewer": "",
+    "approved": false,
+    "attestation": "",
+    "exposure_notes": []
+  },
+  "gaps": []
+}

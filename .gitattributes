@@ -1,0 +1,2 @@
+# Keep hashed text fixtures identical across checkout platforms.
+* text=auto eol=lf

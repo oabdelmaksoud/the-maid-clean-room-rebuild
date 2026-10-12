@@ -1,0 +1,188 @@
+{
+  "format_version": 1,
+  "project_id": "delimited-notebook",
+  "title": "Delimited Notebook synthetic workflow",
+  "scope": "Three-row CSV total/export and invalid-amount atomic in-memory rejection.",
+  "target": {
+    "name": "Delimited Notebook original teaching design",
+    "version": "demo-v1",
+    "mode": "original-synthetic"
+  },
+  "sources": [],
+  "commands": [
+    {
+      "id": "import-csv",
+      "description": "Import validated CSV",
+      "parameters": "CSV path",
+      "preconditions": [
+        "Synthetic local input and writable explicit demo destination."
+      ],
+      "effects": [
+        "Replace records only after complete validation."
+      ],
+      "errors": [
+        "Reject malformed input without replacing existing records."
+      ],
+      "recovery": "Correct invalid input and explicitly retry; durable recovery is outside scope.",
+      "access": "Original Python demo functions",
+      "events": [],
+      "design_rationale": "Small independently authored teaching design using decimal arithmetic and staged parsing."
+    },
+    {
+      "id": "calculate-total",
+      "description": "Sum imported amounts",
+      "parameters": "Validated rows",
+      "preconditions": [
+        "Synthetic local input and writable explicit demo destination."
+      ],
+      "effects": [
+        "Return exact decimal total."
+      ],
+      "errors": [
+        "Reject malformed input without replacing existing records."
+      ],
+      "recovery": "Correct invalid input and explicitly retry; durable recovery is outside scope.",
+      "access": "Original Python demo functions",
+      "events": [],
+      "design_rationale": "Small independently authored teaching design using decimal arithmetic and staged parsing."
+    },
+    {
+      "id": "export-csv",
+      "description": "Export imported rows",
+      "parameters": "Validated rows and new output path",
+      "preconditions": [
+        "Synthetic local input and writable explicit demo destination."
+      ],
+      "effects": [
+        "Write rows with two-decimal amounts."
+      ],
+      "errors": [
+        "Reject malformed input without replacing existing records."
+      ],
+      "recovery": "Correct invalid input and explicitly retry; durable recovery is outside scope.",
+      "access": "Original Python demo functions",
+      "events": [],
+      "design_rationale": "Small independently authored teaching design using decimal arithmetic and staged parsing."
+    }
+  ],
+  "cases": [
+    {
+      "id": "valid-export",
+      "title": "Valid import total and export",
+      "origin": "original_synthetic_design",
+      "source_ids": [],
+      "authorship": "Original Behavior Rebuild Kit synthetic teaching example.",
+      "command_ids": [
+        "import-csv",
+        "calculate-total",
+        "export-csv"
+      ],
+      "preconditions": [
+        "Use only supplied synthetic fixtures."
+      ],
+      "steps": [
+        "Import valid.csv.",
+        "Calculate total and export.",
+        "Independently parse the exported file and recompute its total."
+      ],
+      "expected": "Three ordered rows exported with total 35.50.",
+      "fixtures": [
+        {
+          "path": "packet/fixtures/valid.csv",
+          "sha256": "13a0c471a20d7b32749311c54fc479823246835029707f4f3fc6da30d8a0d0bf"
+        }
+      ],
+      "oracle": {
+        "kind": "exact_json",
+        "description": "Independently parse actual CSV export.",
+        "expected": {
+          "rows": 3,
+          "total": "35.50",
+          "items": [
+            "Notebook",
+            "Pencils",
+            "Folder"
+          ],
+          "amounts": [
+            "12.00",
+            "18.50",
+            "5.00"
+          ]
+        }
+      },
+      "required": true,
+      "required_trials": 1
+    },
+    {
+      "id": "invalid-atomic",
+      "title": "Invalid amount preserves state",
+      "origin": "original_synthetic_design",
+      "source_ids": [],
+      "authorship": "Original Behavior Rebuild Kit synthetic teaching example.",
+      "command_ids": [
+        "import-csv"
+      ],
+      "preconditions": [
+        "Use only supplied synthetic fixtures."
+      ],
+      "steps": [
+        "Initialize a known row.",
+        "Attempt invalid.csv import.",
+        "Compare state and check that no export exists."
+      ],
+      "expected": "Reject invalid amount, preserve previous state, create no output.",
+      "fixtures": [
+        {
+          "path": "packet/fixtures/invalid.csv",
+          "sha256": "7f2df24809a38a5d4ebfaed0c68c88ccc9d937f50fda43b58e192cdbeb508b39"
+        }
+      ],
+      "oracle": {
+        "kind": "exact_json",
+        "description": "Compare prior/after state and actual output absence.",
+        "expected": {
+          "rejected": true,
+          "unchanged": true,
+          "output_created": false
+        }
+      },
+      "required": true,
+      "required_trials": 1
+    }
+  ],
+  "exclusions": [],
+  "exclusion_note": "No exclusions have been approved.",
+  "handoff": {
+    "directory": "packet",
+    "files": [
+      {
+        "path": "packet/spec.md",
+        "sha256": "2ccd1470a1ffddd513fb195f8e7f683b214625909d20fa9a922082ec33e4f789",
+        "role": "specification",
+        "provenance": "Original synthetic material authored for this toolkit.",
+        "source_ids": []
+      },
+      {
+        "path": "packet/fixtures/valid.csv",
+        "sha256": "13a0c471a20d7b32749311c54fc479823246835029707f4f3fc6da30d8a0d0bf",
+        "role": "fixture",
+        "provenance": "Original synthetic material authored for this toolkit.",
+        "source_ids": []
+      },
+      {
+        "path": "packet/fixtures/invalid.csv",
+        "sha256": "7f2df24809a38a5d4ebfaed0c68c88ccc9d937f50fda43b58e192cdbeb508b39",
+        "role": "fixture",
+        "provenance": "Original synthetic material authored for this toolkit.",
+        "source_ids": []
+      }
+    ],
+    "reviewer": "original-synthetic-example-author",
+    "approved": true,
+    "attestation": "This packet is original synthetic teaching material; it contains no observations or copied competitor material. This author declaration is not an independent legal review.",
+    "exposure_notes": [
+      "Only independently authored synthetic behavior and fixtures are handed off."
+    ]
+  },
+  "gaps": []
+}

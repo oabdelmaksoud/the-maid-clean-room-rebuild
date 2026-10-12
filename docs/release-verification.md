@@ -1,0 +1,35 @@
+# Local release verification — 0.1.0
+
+Initial prepublication verification snapshot, October 11, 2026. At that checkpoint, the local candidate had no remote or initial commit. Those historical facts do not describe the repository’s current Git or publication state. Version 0.1.0 identifies the package; this document does not attest to a tagged GitHub release.
+
+## Executed checks
+
+| Check | Observed result |
+|---|---|
+| `python -m unittest discover -s tests -q` on macOS arm64, Python 3.11.15 | 36 tests passed |
+| Same suite, Python 3.12.12 | 36 tests passed |
+| Same suite, Python 3.13.13 | 36 tests passed |
+| Same suite, Python 3.14.6 | 36 tests passed |
+| Documented discovery, handoff and report commands | Passed; static example has no executed acceptance run |
+| Fresh original demo, acceptance and report | Passed, two required trials, candidate `demo-v1` |
+| Relocated standalone skill | Acceptance worked using only the copied skill directory |
+| Skill metadata validation and relative Markdown links | Passed |
+| Independent code and security reviews | Findings corrected; independent re-review approved |
+
+Tests cover malformed and duplicate JSON, bounded inputs, unsafe paths and symlinks, stale hashes and revisions, missing trials/oracles, truthful scope denominators, exclusions, blockers, review declarations, read-only input handling, and deterministic archive construction. Regression cases cover unsupported optional/excluded pass claims, decimal rounding and underflow, Python 3.11 symlink-loop handling, and terminal control escaping.
+
+The example executes a small original CSV transformation and separately inspects its output. Its automated oracle is explicit; it does not represent independent human approval or production parity.
+
+## Host trials
+
+Codex CLI 0.160.1 loaded the project-local skill and exercised discovery, handoff, and verify/recover instructions. It preserved an unsupported autosave claim as unknown, disregarded injected instructions in source text, disclosed exposure, and observed acceptance exit 0 for the matching revision and exit 2 for a mismatched revision. This bounded trial used the same skill instructions as the final candidate; the subsequent validator hardening was verified by the test suite and independent reproductions.
+
+Claude Code 2.1.215 was attempted with a project-local copy, but authentication failed before inference. No Claude native compatibility claim is made. Linux and Windows CI jobs are configured but have not run. The initial host smoke trials did not change global installation or agent configuration. A subsequent complete global Codex installation was exercised through discovery, reviewed handoff, fresh implementation, and explicit acceptance in the [bounded project trial](project-trial.md). That trial passed 141 final comparisons and 80 independent review probes; its negative controls blocked acceptance as expected.
+
+## Distribution boundary
+
+`release-files.txt` is the explicit distribution inventory. The release builder rejects unlisted files, unsafe entries, and symlinks; it excludes Git metadata and Python caches. Full and standalone archives have deterministic ordering, timestamps, and modes. Both distributions include the original MIT license and source-exposure notice. `SHA256SUMS` identifies the produced archive bytes.
+
+Validate and package trusted local copies with no concurrent writers. These tools are not an operating-system sandbox. Recorded permission and reviewer declarations cannot prove their own truth, legal clearance, or implementation independence.
+
+The owner subsequently authorized publication to a private GitHub repository. This dated local record does not establish remote CI completion or a tagged release. Record those outcomes separately from the initial snapshot.
