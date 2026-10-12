@@ -23,7 +23,7 @@ Record the permission basis separately from evidence confidence. Keep unresolved
 
 Do not fetch or inspect proprietary source, bundles, private endpoints, credentials, account material, or copied product assets. An open browser or public URL does not itself establish permitted use. If the authorized source set cannot answer a question, preserve the unknown and its impact on the requested objective. A narrower deliverable requires a recorded user decision.
 
-REA is an optional discovery aid only, when its proposed observations fit the permitted source set. Do not install or require it automatically. REA output does not bypass the source exclusions above or grant handoff permission. The portable workflow has no REA or Replica dependency.
+REA is a supported optional discovery integration. Read [REA integration](references/rea-integration.md) when requested or connected. Prefer its scoped screenshot capture for permitted rendered UI; keep source, bundle, DOM/network inspection and decompilation outside this clean-room profile. Validate captured evidence and the reviewed behavioral handoff with `python3 scripts/rea.py PROJECT_DIR --json`. REA capture files stay evaluator-only. Explicitly authorized setup may register the pinned MCP server; do not install providers or upstream investigation instructions automatically. If REA is unavailable, retain the permitted manual/browser observation path and record the tool limitation. REA output grants no additional source-use or handoff permission. Core validators and non-REA workflows remain portable; Replica is not required.
 
 ## Handoff
 

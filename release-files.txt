@@ -50,6 +50,7 @@ examples/pocket-tasks/app.html
 examples/pocket-tasks/contract.md
 examples/pocket-tasks/record.cjs
 examples/pocket-tasks/run_trial.py
+examples/rea-observation/run_trial.py
 release-files.txt
 skills/the-maid-rebuild/LICENSE
 skills/the-maid-rebuild/NOTICE.md
@@ -74,6 +75,7 @@ skills/the-maid-rebuild/references/evidence-levels.md
 skills/the-maid-rebuild/references/fidelity.md
 skills/the-maid-rebuild/references/handoff-boundaries.md
 skills/the-maid-rebuild/references/implementation-readiness.md
+skills/the-maid-rebuild/references/rea-integration.md
 skills/the-maid-rebuild/references/readiness-record-format.md
 skills/the-maid-rebuild/references/record-format.md
 skills/the-maid-rebuild/references/tool-usage.md
@@ -81,11 +83,13 @@ skills/the-maid-rebuild/references/verification-and-recovery.md
 skills/the-maid-rebuild/references/visual-and-journey.md
 skills/the-maid-rebuild/scripts/core.py
 skills/the-maid-rebuild/scripts/fidelity.py
+skills/the-maid-rebuild/scripts/rea.py
 skills/the-maid-rebuild/scripts/readiness.py
 skills/the-maid-rebuild/scripts/report.py
 skills/the-maid-rebuild/scripts/ui_checks.py
 skills/the-maid-rebuild/scripts/validate.py
 tests/test_fidelity.py
+tests/test_rea.py
 tests/test_readiness.py
 tests/test_release.py
 tests/test_ui_checks.py

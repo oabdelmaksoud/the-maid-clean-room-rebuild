@@ -40,7 +40,7 @@ Every automated pass claim is independently recomputed by the validator from its
 
 ## Optional discovery tools
 
-REA can assist permitted observations when useful. It is neither installed nor required by this skill. Do not put proprietary source, extracted bundles, private endpoint material, credentials, or copied assets into the handoff. A discovery tool's output is evidence requiring review, not permission to broaden access. Replica is also not a dependency. Keep the default workflow portable and use the same evidence boundaries whichever capture tool you choose.
+REA has a supported optional screenshot-discovery profile; see [REA integration](rea-integration.md). Its installation requires the user's authorization and it is not a required dependency. Do not put proprietary source, extracted bundles, private endpoint material, credentials, or copied assets into the handoff. A discovery tool's output is evidence requiring review, not permission to broaden access. Replica is also not a dependency. Keep the default workflow portable and use the same evidence boundaries whichever capture tool you choose.
 
 
 ## Target fidelity versus candidate regression

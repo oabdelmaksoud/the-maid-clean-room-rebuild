@@ -25,3 +25,7 @@ The core tools need no browser, REA, Replica, Pillow, or network access. A brows
 ## Slice-readiness supplement
 
 `python3 scripts/readiness.py PROJECT_DIR --json` reads `readiness-contract.json` and `readiness.json` without requiring `project.json`. It is an additional gate before new faithful-slice implementation; it does not replace handoff, acceptance or fidelity checks. It supports a ready requested slice within a provisional full-scope record. Review [implementation readiness](implementation-readiness.md) and [its exact record format](readiness-record-format.md) before claiming readiness. Exit codes remain 0/1/2. Existing bounded examples remain compatible.
+
+## Optional REA evidence gate
+
+`python3 scripts/rea.py PROJECT_DIR --json` reads `rea-evidence.json` and bounded local evidence, not a live tool connection. Use [REA integration](rea-integration.md) for its scope, setup, record format and separate reviewer responsibilities. Existing readiness/fidelity gates remain required where applicable.

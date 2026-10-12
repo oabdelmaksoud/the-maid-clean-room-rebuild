@@ -7,7 +7,7 @@
 A practical agent skill for turning permitted research into a reviewed contract,
 a ready implementation slice, and reproducible acceptance evidence.
 
-<img alt="Python 3.11 or later" src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=flat-square"> <img alt="MIT license" src="https://img.shields.io/badge/License-MIT-507D64?style=flat-square"> <img alt="Version 0.4.0" src="https://img.shields.io/badge/Version-0.4.0-725AC1?style=flat-square">
+<img alt="Python 3.11 or later" src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=flat-square"> <img alt="MIT license" src="https://img.shields.io/badge/License-MIT-507D64?style=flat-square"> <img alt="Version 0.5.0" src="https://img.shields.io/badge/Version-0.5.0-725AC1?style=flat-square">
 
 [The method](#the-method) · [Quick start](#quick-start) · [Try it](#try-it) · [Evidence](#evidence-so-far) · [Reference](#reference)
 
@@ -136,7 +136,27 @@ To reproduce the browser comparison, follow the example's [optional dependency s
 
 The macOS/Linux example paths above assume the documented setup: a separate Python environment with Pillow and a separate Node directory with Playwright and Chromium. Browser dependencies are required only for capture. The runner retains failed evidence, compares the narrow and expanded suites, and checks the generated records with the portable validator.
 
-> **Portable by default.** REA can help with permitted discovery when needed. Neither REA nor Replica is required. Discovery outputs still need review; proprietary source, bundles, private endpoint material, and copied assets stay out of the handoff.
+## REA, connected to The Maid
+
+**REA now has a supported discovery path**, with scoped screenshot capture, reviewed behavioral observations, and an offline evidence/handoff gate. Keep capture files outside the author packet; hand off only independently reviewed behavioral records. REA remains optional for other projects.
+
+```text
+$the-maid-rebuild Use REA for permitted screenshot discovery of this product. Keep source and network inspection excluded, measure the UI, review the observations, and run the REA evidence and slice-readiness gates before the implementation handoff.
+```
+
+The [REA integration guide](skills/the-maid-rebuild/references/rea-integration.md) covers pinned setup, the limited Codex tool profile, capture prerequisites, record format, and fallback behavior. The tested integration targets `rea-agents@6.4.0`; it is an external tool rather than bundled code.
+
+```sh
+python3 skills/the-maid-rebuild/scripts/rea.py PROJECT_DIR --json
+python3 examples/rea-observation/run_trial.py --output ../rea-observation-trial
+```
+
+A separate live smoke test used REA 6.4.0 to capture an original isolated local page, independently checked the PNG bytes and dimensions, and confirmed rejection of a disallowed origin. It did not access Manus, accounts, target source, or personal browser data.
+
+The synthetic trial tests the handoff controls without installing REA or accessing a product. A live REA screenshot proves a recorded capture, not product completeness or clone fidelity. The gate checks files and declarations; it cannot authenticate permission, detect all sensitive content, or verify that a screenshot came from REA. Those remain review responsibilities.
+
+> **Portable by default.** Core checks remain offline and use the Python standard library. REA and Replica are not dependencies of the existing fidelity or readiness gates. Source/bundle/network inspection and copied assets remain excluded from The Maid's clean-room profile.
+
 
 ## Fidelity beyond a passing subset
 
@@ -186,7 +206,7 @@ $the-maid-rebuild Prepare a ready implementation slice from permitted evidence. 
 
 The Manus trial caught more gaps than it prevented. Approximate layout prose, conflicting profile labels and a packet approved only for known behavior let implementation start before the relevant states and capabilities were ready. A working file-producing agent did not establish the target's browser, generation or cloud workflows. The final assessment retained known UI mismatches.
 
-Its **4 matched / 22 mismatched / 28 unknown** obligations are a historical contract count, not an accuracy percentage. That contract mixed source documents, broad unknown surfaces and visual cases. Version 0.4.0 adds a slice-readiness record gate and sharpens the workflow: reconcile author/evaluator requirements, measure layouts, match capture conditions, plan each real capability and keep failed runs in a repair loop. Inventory normalization and broader paired task rubrics still require review and actual execution; the tools do not observe products or supply missing services.
+Its **4 matched / 22 mismatched / 28 unknown** obligations are a historical contract count, not an accuracy percentage. That contract mixed source documents, broad unknown surfaces and visual cases. Version 0.4.0 added a slice-readiness record gate and sharpens the workflow: reconcile author/evaluator requirements, measure layouts, match capture conditions, plan each real capability and keep failed runs in a repair loop. Inventory normalization and broader paired task rubrics still require review and actual execution; the tools do not observe products or supply missing services.
 
 No Manus screenshots, source or assets are bundled. The trial's local findings guide the method; they do not establish that Manus has been rebuilt or that full product equivalence is attainable through a skill alone.
 
@@ -255,8 +275,8 @@ python3 tools/build_release.py --output ../behavior-rebuild-release
 
 The builder checks the tree against `release-files.txt`, then creates:
 
-- `behavior-rebuild-kit-0.4.0.zip` — repository resources.
-- `behavior-rebuild-skill-0.4.0.zip` — the self-contained `the-maid-rebuild/` folder.
+- `behavior-rebuild-kit-0.5.0.zip` — repository resources.
+- `behavior-rebuild-skill-0.5.0.zip` — the self-contained `the-maid-rebuild/` folder.
 - `SHA256SUMS` — archive byte identities.
 
 Choose a different destination if it already exists. Adding or removing a release file requires updating the inventory. Archives, hashes, and local preparation do not publish anything or constitute publication approval.

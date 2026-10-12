@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.5.0 — REA discovery integration
+
+- Add supported optional REA screenshot discovery and a reviewed observation handoff gate; raw captures remain evaluator-only.
+- Document pinned REA setup with a restricted Codex screenshot tool profile, without installing analysis providers or upstream investigation instructions.
+- Keep source/network inspection excluded, core validators offline, and existing non-REA projects compatible.
+- Add synthetic evidence fixtures for permitted and rejected handoffs; tool/version/permission declarations are not authenticated by the validator.
+
 ## 0.4.0 — Implementation readiness
 
 - Add a portable local slice-readiness gate and intentionally blocked starter record; existing bounded examples retain their earlier claims without migration.
