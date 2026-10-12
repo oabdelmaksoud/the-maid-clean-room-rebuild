@@ -3,6 +3,7 @@ import hashlib
 import json
 import re
 import stat
+import ui_checks
 from datetime import date, datetime
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
@@ -120,6 +121,7 @@ class Reader:
             fail('ROOT', root, 'Project root must be a directory')
         self.cache = {}
         self.total = 0
+        self.visual_pixels_checked = 0
 
     def local(self, name):
         current = self.root
@@ -282,10 +284,14 @@ def validate_project(root, stage='discover', run=None, candidate=None):
             integer(case['required_trials'], 1, 20, p + '.required_trials')
             files(case['fixtures'], p + '.fixtures')
             shape(case['oracle'], 'kind description expected', p + '.oracle')
-            enum(case['oracle']['kind'], 'exact_json manual_review', p + '.oracle.kind')
+            enum(case['oracle']['kind'], 'exact_json manual_review journey_trace visual_pixels', p + '.oracle.kind')
             text(case['oracle']['description'], p + '.oracle.description')
             if (case['oracle']['kind'] == 'manual_review') != (case['oracle']['expected'] is None):
-                fail('ORACLE_EXPECTED', p, 'Manual review requires null; exact JSON requires non-null expected')
+                fail('ORACLE_EXPECTED', p, 'Manual review requires null; automated oracles require non-null expected')
+            if case['oracle']['kind'] == 'journey_trace':
+                ui_checks.journey(case['oracle']['expected'], p + '.oracle.expected')
+            elif case['oracle']['kind'] == 'visual_pixels':
+                ui_checks.visual_expected(case['oracle']['expected'], p + '.oracle.expected', reader)
             kinds = {indexes['sources'][s]['kind'] for s in case['source_ids']}
             required_kind = {'documented': 'D', 'observed': 'O', 'reported': 'R'}.get(case['origin'])
             if required_kind and (required_kind not in kinds or 'U' in kinds):
@@ -432,13 +438,19 @@ def validate_project(root, stage='discover', run=None, candidate=None):
                 if evaluation['status'] == 'pass':
                     if not review['reviewer'].strip() or review['decision'] != 'accepted' or not review['notes'].strip():
                         issue('PASS_REVIEW', case['id'], 'Pass requires recorded accepted review with reviewer and notes')
-                    if case['oracle']['kind'] == 'exact_json':
+                    if case['oracle']['kind'] in ('exact_json', 'journey_trace', 'visual_pixels'):
                         if actual is None:
-                            issue('RESULT_MISSING', case['id'], 'Exact JSON pass requires result file')
+                            issue('RESULT_MISSING', case['id'], 'Automated oracle pass requires result file')
                         else:
-                            parsed = strict_json(actual, evaluation['result']['path'])
-                            if canonical(parsed) != canonical(case['oracle']['expected']):
-                                issue('ORACLE_MISMATCH', case['id'], 'Actual result differs from expected JSON, including types')
+                            if case['oracle']['kind'] == 'visual_pixels':
+                                matches = ui_checks.visual_matches(case['oracle']['expected'], actual, evaluation['result']['path'], reader)
+                            else:
+                                parsed = strict_json(actual, evaluation['result']['path'])
+                                if case['oracle']['kind'] == 'journey_trace':
+                                    ui_checks.journey(parsed, evaluation['result']['path'])
+                                matches = canonical(parsed) == canonical(case['oracle']['expected'])
+                            if not matches:
+                                issue('ORACLE_MISMATCH', case['id'], 'Actual result differs from frozen oracle expectations')
                     elif actual is not None or not evaluation['evidence']:
                         issue('MANUAL_EVIDENCE', case['id'], 'Manual pass requires null result and evidence file')
             result['summary'].update(run_id=record['run_id'], candidate_id=candidate)

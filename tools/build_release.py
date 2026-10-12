@@ -2,6 +2,7 @@
 """Build deterministic release archives from the explicit reviewed file manifest."""
 import argparse
 import hashlib
+import re
 from pathlib import Path, PurePosixPath
 import zipfile
 
@@ -53,8 +54,8 @@ def build(root, output):
         raise ValueError('output must be a NEW directory outside the repository')
     entries = selected_files(root)
     version = (root / 'VERSION').read_text(encoding='utf-8').strip()
-    if version != '0.1.0':
-        raise ValueError('this release builder requires VERSION 0.1.0')
+    if len(version) > 32 or not re.fullmatch(r'(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)', version):
+        raise ValueError('VERSION must be a stable semantic version: MAJOR.MINOR.PATCH without leading zeroes')
     skill_prefix = 'skills/behavior-rebuild/'
     skill_entries = [p for p in entries if p.startswith(skill_prefix)]
     if not skill_entries:

@@ -1,0 +1,47 @@
+# UI validation contract
+
+Complete this record before candidate execution. Unresolved fields remain blockers, not acceptance evidence.
+
+## Scope and provenance
+
+- Product/version and permitted observation scope:
+- Original synthetic data and initialization:
+- Baseline origin (permitted reference or approved original design):
+- Reviewer and exposure record:
+- Required workflows and explicit exclusions:
+
+## Capture conditions
+
+- Browser/version, operating system, fonts:
+- Viewport, device scale factor, color scheme:
+- Locale, timezone, clock handling:
+- Ready-state rule, font wait, animation/caret handling:
+- Storage initialization and reload behavior:
+- Full capture paths and hashes:
+- Predeclared crop rectangle, if any, and rationale:
+
+## Visual cases
+
+| Case ID | Checkpoint | Baseline path / SHA-256 | Width × height | Channel delta budget | Changed-pixel budget | Rationale |
+|---|---|---|---|---|---|---|
+
+Retain original PNG evidence and RGB PPM comparison files. Freeze the baseline and budgets before execution. Do not automatically rebaseline failures.
+
+## Journey cases
+
+| Case ID | Step ID | Action | Expected observable state | Actual-state collection method |
+|---|---|---|---|---|
+
+Use nonempty ordered steps and nonempty state objects. Include persistence/reload or error/recovery steps where required. Read actual candidate state; never copy expectations into results.
+
+## Comparison and recovery
+
+- Baseline suite and unchanged candidate identity:
+- Added visual and journey cases:
+- Deliberate faults and expected detection:
+- Observed baseline versus expanded results:
+- Retained failing evidence:
+- Repair identity and unchanged-contract rerun:
+- Independent review and remaining limitations:
+
+Bind the explicit run to the exact manifest bytes and candidate ID. These identities establish record consistency, not runtime authenticity or isolation.

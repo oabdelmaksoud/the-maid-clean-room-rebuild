@@ -7,7 +7,7 @@
 A practical agent skill for turning permitted research into a reviewed contract,
 a fresh implementation, and reproducible acceptance evidence.
 
-<img alt="Python 3.11 or later" src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=flat-square"> <img alt="MIT license" src="https://img.shields.io/badge/License-MIT-507D64?style=flat-square"> <img alt="Version 0.1.0" src="https://img.shields.io/badge/Version-0.1.0-725AC1?style=flat-square">
+<img alt="Python 3.11 or later" src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=flat-square"> <img alt="MIT license" src="https://img.shields.io/badge/License-MIT-507D64?style=flat-square"> <img alt="Version 0.2.0" src="https://img.shields.io/badge/Version-0.2.0-725AC1?style=flat-square">
 
 [The method](#the-method) · [Quick start](#quick-start) · [Try it](#try-it) · [Evidence](#evidence-so-far) · [Reference](#reference)
 
@@ -17,7 +17,7 @@ a fresh implementation, and reproducible acceptance evidence.
 
 Good rebuilds start with a clear account of what a product does—and end with evidence that the new implementation meets its declared contract. The Maid keeps observations, design decisions, permissions, unknowns, and test results connected along the way.
 
-Bring your own product, stack, and authorized access. The kit supplies the method, reusable records, and local checks. Its Python tools use only the standard library and run offline; validators and reporters read records without changing them.
+Bring your own product, stack, and authorized access. The kit supplies the method, reusable records, and local checks. Its core Python tools use only the standard library and run offline; validators and reporters read records without changing them.
 
 > **New name, stable skill.** The Maid is the project brand. Install and invoke **`$behavior-rebuild`** as before. Skill paths, CLI commands, and the `behavior-rebuild-kit` / `behavior-rebuild-skill` archive names remain stable.
 
@@ -95,13 +95,45 @@ python3 skills/behavior-rebuild/scripts/report.py ../behavior-rebuild-demo --run
 
 The runner writes only its new output directory. The example checks its declared total/export and invalid-amount behavior; crash recovery, cancellation, and receipt/idempotency guarantees remain extension work. Its recorded reviewer represents automated fixture checks. Read the [example guide](examples/delimited-notebook/README.md) for the exact oracle scope.
 
+## See the screen. Follow the journey.
+
+The Maid now checks two UI evidence types alongside output assertions:
+
+| Check | What it catches | What you freeze first |
+|---|---|---|
+| **Visual pixels** | A rendered checkpoint that differs beyond its declared RGB pixel budgets. | Hashed baseline, dimensions, capture conditions, and tolerances. |
+| **Journey trace** | Missing/reordered actions or incorrect observed DOM, storage, or output state. | Ordered actions and exact, typed state assertions. |
+
+These are separate gates: a correct-looking button can still fail after a click or reload. Every automated pass claim is recomputed from the recorded output. Browser capture is separate from the offline validator; the optional browser example uses Playwright and Pillow.
+
+```text
+$behavior-rebuild Verify/recover this UI using visual and user-journey validation. Freeze the permitted baselines, capture conditions, and ordered state assertions before execution. Compare the current checks with the added checks using deliberate visual and persistence faults, preserve failures, and independently rerun repairs. Keep REA optional.
+```
+
+Start with the [UI validation template](skills/behavior-rebuild/assets/templates/ui-validation.md) and [capture guide](skills/behavior-rebuild/references/visual-and-journey.md). The [Pocket Tasks project](examples/pocket-tasks/README.md) demonstrates the baseline-versus-expanded comparison in a real browser.
+
+To reproduce the browser comparison, follow the example's [optional dependency setup](examples/pocket-tasks/README.md#run-it), then run from this repository root with a **new output directory**:
+
+```sh
+/tmp/maid-browser-python/bin/python examples/pocket-tasks/run_trial.py \
+  --output /tmp/maid-pocket-trial \
+  --playwright-module /tmp/maid-browser-node/node_modules/playwright
+```
+
+The macOS/Linux example paths above assume the documented setup: a separate Python environment with Pillow and a separate Node directory with Playwright and Chromium. Browser dependencies are required only for capture. The runner retains failed evidence, compares the narrow and expanded suites, and checks the generated records with the portable validator.
+
+> **Portable by default.** REA can help with permitted discovery when needed. Neither REA nor Replica is required. Discovery outputs still need review; proprietary source, bundles, private endpoint material, and copied assets stay out of the handoff.
+
 ## Evidence so far
 
 | Observed check | Result and boundary |
 |---|---|
-| **36 tests × six CI combinations** | Linux, macOS, and Windows on Python 3.11 and 3.14. All jobs passed the tests, demo, explicit acceptance gate, and release build in [run 38187975934](https://github.com/oabdelmaksoud/the-maid-clean-room-rebuild/actions/runs/38187975934). |
+| **Pocket Tasks browser comparison** | The narrow add-task check passed despite three seeded defects. Added visual/journey checks caught missing blank-input feedback, lost tasks after reload, and broken mobile layout; the repaired variant passed all five cases. Each isolated fault failed its corresponding added check. [Reproduce the trial](examples/pocket-tasks/README.md). |
+| **Historical 0.1.0: 36 tests × six CI combinations** | Linux, macOS, and Windows on Python 3.11 and 3.14. All jobs passed the tests, demo, explicit acceptance gate, and release build in [run 38187975934](https://github.com/oabdelmaksoud/the-maid-clean-room-rebuild/actions/runs/38187975934). |
 | **Installed-skill project trial** | 141/141 comparisons and 80/80 independent review probes passed within a bounded sorting contract. Negative controls rejected failed behavior, forged declarations, mismatched candidates, and tampered packets. [Trial details](docs/project-trial.md). |
 | **Native Codex trials** | Bounded project-local and global installed trials completed. Claude native behavior remains unverified because authentication blocked its trial. [Host coverage](docs/compatibility.md). |
+
+Pocket Tasks is a controlled experiment on an original app with known faults, not an independent clean-room rebuild. It demonstrates the benefit of the added coverage; richer assertions could also have used the earlier JSON oracle.
 
 These are finite checks of declared scope. They do not establish full product parity, production readiness, legal clearance, or forensic independence. The [verification record](docs/release-verification.md) identifies the tested revisions and historical checkpoints.
 
@@ -113,6 +145,7 @@ Start a real project with the [templates](skills/behavior-rebuild/assets/templat
 |---|---|
 | [Method](docs/method.md) | Research, handoff, implementation, and review boundaries. |
 | [Record format](skills/behavior-rebuild/references/record-format.md) | Exact fields in the bespoke versioned JSON records. |
+| [Visual and journey validation](skills/behavior-rebuild/references/visual-and-journey.md) | Frozen visual baselines, ordered state assertions, capture conditions, and limitations. |
 | [Quality gates](docs/quality-gates.md) | What each check can support. |
 | [Evidence boundary](docs/evidence-boundary.md) | Limits of hashes, declarations, and recorded outcomes. |
 | [Publication checklist](docs/publication-checklist.md) | Conditions to check before distribution. |
@@ -154,8 +187,8 @@ python3 tools/build_release.py --output ../behavior-rebuild-release
 
 The builder checks the tree against `release-files.txt`, then creates:
 
-- `behavior-rebuild-kit-0.1.0.zip` — repository resources.
-- `behavior-rebuild-skill-0.1.0.zip` — the self-contained `behavior-rebuild/` folder.
+- `behavior-rebuild-kit-0.2.0.zip` — repository resources.
+- `behavior-rebuild-skill-0.2.0.zip` — the self-contained `behavior-rebuild/` folder.
 - `SHA256SUMS` — archive byte identities.
 
 Choose a different destination if it already exists. Adding or removing a release file requires updating the inventory. Archives, hashes, and local preparation do not publish anything or constitute publication approval.

@@ -1,4 +1,16 @@
-# Local release verification — 0.1.0
+# Release verification records
+
+## Version 0.2.0 — October 11, 2026
+
+Local macOS verification passed all 52 unit/CLI tests. A separate code reviewer passed the same suite and 1,000 randomized pixel-comparison probes. New cases cover ordered journeys, exact state types, image dimensions and budgets, malformed images, forged passes, altered hashes, symlinks, optional pass claims, and bounded aggregate comparison work.
+
+The [Pocket Tasks browser experiment](../examples/pocket-tasks/README.md) used actual Chromium 153.0.8010.12, Playwright 1.62.1, Pillow 12.1.1, and Python 3.14.6. The narrow add-task case passed for all five variants. The expanded suite rejected all three combined faults, and each isolated fault failed exactly its associated case. The repaired variant passed all five cases. All ten baseline/enhanced acceptance invocations returned their expected exit codes. The runner preserves source and validator snapshots, hashes, screenshots, traces, frozen manifests, and gate outputs outside the source distribution.
+
+This is a controlled coverage experiment on an original app. Expected failures are deliberately seeded, the reference is an original design, and the author knew the faults. It does not establish independent clean-room authorship or general defect-discovery rates. Existing JSON assertions could also have expressed richer state checks; the extension supplies reusable visual and journey contracts with validation.
+
+The workflow includes the existing six OS/Python combinations and a separate Ubuntu Chromium trial with retained evidence. A workflow definition alone is not a completed CI result; inspect the run for the exact revision under review. No tagged release is asserted.
+
+## Historical version 0.1.0
 
 Initial prepublication verification snapshot, October 11, 2026. At that checkpoint, the local candidate had no remote or initial commit. Those historical facts do not describe the repository’s current Git or publication state. Version 0.1.0 identifies the package; this document does not attest to a tagged GitHub release.
 

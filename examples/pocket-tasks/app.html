@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pocket Tasks</title>
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; background: #f1f4ef; color: #203329; font: 18px Arial, sans-serif; }
+main { width: min(640px, calc(100% - 40px)); margin: 64px auto; padding: 30px; background: white; border: 2px solid #203329; border-radius: 16px; }
+h1 { margin-top: 0; font-size: 32px; } p { line-height: 1.5; }
+label { display: block; margin: 24px 0 8px; } input { width: 100%; padding: 12px; border: 1px solid #64776b; font: inherit; }
+button { margin-top: 16px; padding: 12px 24px; background: #203329; color: white; border: 0; border-radius: 6px; font: inherit; }
+#error { color: #9b1e16; min-height: 27px; } li { padding: 8px 0; }
+@media (max-width: 480px) { body.mobile-fault button { visibility: hidden; } main { margin-top: 24px; padding: 24px; } }
+</style>
+<main><h1>Pocket Tasks</h1><p>A little space for your next useful thing.</p><form><label for="task">Task</label><input id="task" autocomplete="off"><button>Save task</button><p id="error" role="alert"></p></form><ul aria-label="Tasks"></ul></main>
+<script>
+const variant = new URLSearchParams(location.search).get('variant') || 'fixed';
+const fault = name => variant === name || variant === 'buggy';
+if (fault('mobile')) document.body.classList.add('mobile-fault');
+let tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
+const list = document.querySelector('ul');
+function render() { list.replaceChildren(...tasks.map(text => { const item = document.createElement('li'); item.textContent = text; return item; })); }
+render();
+document.querySelector('form').addEventListener('submit', event => {
+  event.preventDefault();
+  const input = document.querySelector('input');
+  const error = document.querySelector('#error');
+  const task = input.value.trim();
+  if (!task) { if (!fault('feedback')) error.textContent = 'Enter a task.'; return; }
+  error.textContent = ''; tasks.push(task); render(); input.value = '';
+  if (!fault('persistence')) localStorage.setItem('tasks', JSON.stringify(tasks));
+});
+</script></html>

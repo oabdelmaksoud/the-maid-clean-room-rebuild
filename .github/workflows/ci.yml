@@ -19,3 +19,24 @@ jobs:
       - run: python examples/delimited-notebook/run_demo.py --output "${{ runner.temp }}/behavior-demo"
       - run: python skills/behavior-rebuild/scripts/validate.py "${{ runner.temp }}/behavior-demo" --stage acceptance --run runs/demo.json --candidate demo-v1 --json
       - run: python tools/build_release.py --output "${{ runner.temp }}/behavior-release"
+  browser-trial:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install Pillow==12.1.1
+      - run: npm install --prefix "${{ runner.temp }}/browser-tools" playwright@1.62.1
+      - run: node "${{ runner.temp }}/browser-tools/node_modules/playwright/cli.js" install --with-deps chromium
+      - run: python examples/pocket-tasks/run_trial.py --output "${{ runner.temp }}/pocket-trial" --playwright-module "${{ runner.temp }}/browser-tools/node_modules/playwright"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pocket-tasks-browser-evidence
+          path: ${{ runner.temp }}/pocket-trial
+          retention-days: 7

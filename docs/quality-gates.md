@@ -6,6 +6,8 @@
 | Evidence bytes match references | Local SHA-256 checks and safe path reads | Evidence provenance, permission, and semantic relevance. |
 | Packet matches declared handoff | Exact file set, hashes, extensions, source references, exposure/reviewer fields | Reviewer must inspect content and the stated use basis. |
 | Required outcomes have recorded support | Explicit run/candidate binding, trials, oracle/result and review checks | Reproduce the outcome and assess oracle independence. |
+| Recorded journey matches its contract | Ordered step/action/state comparison, including exact JSON types | A trusted browser recorder must actually perform actions and capture relevant state; offline records cannot authenticate execution. |
+| Captured appearance meets its budget | Recomputed RGB pixel differences against a hashed baseline with frozen dimensions and tolerances | Use stable rendering conditions and independently review the baseline; pixel agreement does not establish usability or functional correctness. |
 | Required uncertainty blocks acceptance | Missing/failed/blocked/unknown trial rules and open blockers | Whether the chosen required cases cover actual user needs. |
 | Exclusions are visible | Explicit approved exclusions and denominator reporting | Whether scope reduction is justified. |
 | Tools behave predictably | Unit/CLI negative tests and bounded read checks | Platform combinations actually executed. |

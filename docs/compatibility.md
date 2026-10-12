@@ -14,6 +14,8 @@ The canonical distribution is the complete `skills/behavior-rebuild/` directory.
 
 Follow the chosen host's current documented skill installation process and copy the entire folder, not only `SKILL.md`. Initial trials used project-local skill locations. A subsequent trial used a complete global Codex installation and exercised the method on a bounded real-command project; see [project trial](project-trial.md). The install command in the [README](../README.md) copies the skill only; it does not edit agent configuration. A plugin adapter remains deferred until trials demonstrate useful installation or update behavior.
 
-The tools require Python 3.11+ and only the standard library. Validate a trusted, quiescent local copy: no other process should replace files or path components during inspection. The validator is not a sandbox against concurrent hostile filesystem mutation.
+The offline validators require Python 3.11+ and only the standard library, including the visual-pixel and journey-trace checks. The optional Pocket Tasks browser trial additionally uses Node.js, Playwright/Chromium, and Pillow to capture PNGs and convert them to the validator's bounded PPM format. These capture dependencies are not required to install or use the portable skill. REA is optional discovery tooling and is not a dependency of any acceptance gate.
+
+Validate a trusted, quiescent local copy: no other process should replace files or path components during inspection. The validator is not a sandbox against concurrent hostile filesystem mutation.
 
 A configured CI matrix states intended coverage. Only observed completed runs establish tested combinations. The [release verification record](release-verification.md) identifies the tested revision, commands, versions, results, and remaining limitations. Later documentation updates are not implicitly covered by an earlier CI run.

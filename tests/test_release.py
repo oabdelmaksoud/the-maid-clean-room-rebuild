@@ -16,7 +16,7 @@ class ReleaseTests(unittest.TestCase):
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name) / 'repo'
         (self.root / 'skills/behavior-rebuild').mkdir(parents=True)
-        (self.root / 'VERSION').write_text('0.1.0\n')
+        (self.root / 'VERSION').write_text('0.2.0\n')
         (self.root / 'skills/behavior-rebuild/SKILL.md').write_text('Original test fixture\n')
         self.entries = ['VERSION', 'release-files.txt', 'skills/behavior-rebuild/SKILL.md']
         (self.root / 'release-files.txt').write_text('\n'.join(self.entries) + '\n')
@@ -25,6 +25,7 @@ class ReleaseTests(unittest.TestCase):
         one, two = Path(self.temp.name) / 'one', Path(self.temp.name) / 'two'
         names = release.build(self.root, one)
         release.build(self.root, two)
+        self.assertEqual(names, ['behavior-rebuild-kit-0.2.0.zip', 'behavior-rebuild-skill-0.2.0.zip'])
         for name in names + ['SHA256SUMS']:
             self.assertEqual((one / name).read_bytes(), (two / name).read_bytes())
         with zipfile.ZipFile(one / names[0]) as archive:
@@ -33,6 +34,15 @@ class ReleaseTests(unittest.TestCase):
                 self.assertEqual(info.date_time, (1980, 1, 1, 0, 0, 0))
         with zipfile.ZipFile(one / names[1]) as archive:
             self.assertEqual(archive.namelist(), ['behavior-rebuild/SKILL.md'])
+
+    def test_reject_unsafe_or_malformed_version(self):
+        for version in ['../0.2.0', '/0.2.0', '0.2.0/other', '01.2.0', '0.2', 'v0.2.0', '0.2.0\nextra', '0.2.0-beta', '9' * 33 + '.0.0']:
+            with self.subTest(version=version):
+                (self.root / 'VERSION').write_text(version)
+                output = Path(self.temp.name) / 'out'
+                with self.assertRaises(ValueError):
+                    release.build(self.root, output)
+                self.assertFalse(output.exists())
 
     def test_reject_unlisted(self):
         (self.root / 'unreviewed.txt').write_text('not selected')

@@ -5,7 +5,7 @@ description: Discover permitted product behavior, prepare an independent impleme
 
 # The Maid - Clean Room Rebuild
 
-Produce a traceable route from permitted evidence to an independently authored implementation contract and reproducible acceptance cases. Preserve the user's product scope and source restrictions. This method does not certify legal clearance, independence, or product parity.
+Produce a traceable route from permitted evidence to an independently authored implementation contract and reproducible acceptance cases, including visual and user-journey evidence where relevant. Preserve the user's product scope and source restrictions. This method does not certify legal clearance, independence, or product parity.
 
 Choose the mode matching the requested work; do not run all modes automatically.
 
@@ -17,6 +17,8 @@ Record the permission basis separately from evidence confidence. Keep unresolved
 
 Do not fetch or inspect proprietary source, bundles, private endpoints, credentials, account material, or copied product assets. An open browser or public URL does not itself establish permitted use. If the authorized source set cannot answer a question, preserve the unknown or narrow scope explicitly.
 
+REA is an optional discovery aid only, when its proposed observations fit the permitted source set. Do not install or require it automatically. REA output does not bypass the source exclusions above or grant handoff permission. The portable workflow has no REA or Replica dependency.
+
 ## Handoff
 
 Read [command contracts](references/command-contracts.md) and [handoff boundaries](references/handoff-boundaries.md). Distill approved evidence into behavior contracts and independently chosen command/state contracts. Record what each researcher, implementer, and reviewer has already seen; do not claim fresh isolation for a context exposed to broader material.
@@ -26,6 +28,8 @@ Have a separate reviewer evaluate the packet. Give the implementer only the appr
 ## Verify/recover
 
 Read [verification and recovery](references/verification-and-recovery.md). Define acceptance assertions and oracles before running the implementation. Preserve the corpus identity, implementation revision, individual trial outcomes, and output evidence. Use the local scripts according to [tool usage](references/tool-usage.md); a successful record check is not an independently verified product outcome.
+
+For UI work, read [visual and journey validation](references/visual-and-journey.md) and use the [UI validation template](assets/templates/ui-validation.md). Freeze screenshot conditions, baselines, tolerances, and ordered state assertions before execution. Capture actual DOM/storage and rendered pixels; never populate actual results from expected values. Use negative controls to compare detection with the prior suite, preserve failures, and report the measured improvement and its limits.
 
 Report required failures, blocked cases, unknowns, and exclusions explicitly. Rank repair work by user harm and workflow exposure, then evidence strength and effort. Reproduce a failure, repair it within assigned ownership, and obtain an independent rerun/review before closing its gap.
 
